@@ -30,6 +30,7 @@ function Navbar() {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
+
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
@@ -64,7 +65,7 @@ function Navbar() {
             <div className="z-10 flex flex-col items-start flex-shrink-0">
               <div
                 className={clsx(
-                  "text-4xl font-Qwigley", // Assuming you have this font available
+                  "text-7xl font-Qwigley my-0", // Assuming you have this font available
                   "text-[#0B2838]"
                 )}
               >
@@ -72,7 +73,7 @@ function Navbar() {
               </div>
               <div
                 className={clsx(
-                  "text-sm font-Prompt", // Assuming you have this font available
+                  "text-sm font-Prompt my-0 ", // Assuming you have this font available
                   "text-[#0B2838]"
                 )}
               >
@@ -112,7 +113,9 @@ function Navbar() {
                   href="#login"
                   className="px-4 py-2 bg-[#0B2838] text-white rounded-[14px] shadow-sm hover:shadow-md transition duration-300"
                 >
-                  Login
+
+                  {localStorage.getItem('auth-token')?"Name of the user":"Login"}
+
                 </a>
               </div>
               <div className="flex-col justify-end lg:hidden md:flex">
