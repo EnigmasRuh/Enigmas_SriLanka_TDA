@@ -3,6 +3,7 @@ import {RouterProvider,createBrowserRouter} from "react-router-dom";
 import MainLayOut from "../LayOut/LayOut";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import TravelerOnboarding from "../Pages/TravelerOnboarding/TravelerOnboarding";
 
 
 const router1 = createBrowserRouter([{
@@ -19,6 +20,17 @@ const router1 = createBrowserRouter([{
       index: true,
       element : <Login/>,
     }]},
+
+    {
+      path: "/traveler-onboarding",
+      children: [
+        {
+          index: true,
+          element: <TravelerOnboarding/>,
+        },
+      ],
+    }
+    
 
 ]);
 
