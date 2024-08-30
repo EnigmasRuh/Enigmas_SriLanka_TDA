@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../assets/logo.png";
+import PropTypes from "prop-types";
 import clsx from "clsx";
+import './Navbar.css';
 
 const navItems = [
   { label: "Home", href: "home" },
@@ -26,44 +27,12 @@ function Navbar() {
     });
   };
 
-  const elementIsVisibleInViewport = (el, partiallyVisible = true) => {
-    if (!el) return false;
-    const { top, left, bottom, right } = el.getBoundingClientRect();
-    const { innerHeight, innerWidth } = window;
-    return partiallyVisible
-      ? ((top > 0 && top < innerHeight) ||
-          (bottom > 0 && bottom < innerHeight)) &&
-          ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
-      : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
-  };
-
-  const setActiveLinks = () => {
-    if (elementIsVisibleInViewport(document.getElementById("home"))) {
-      setActiveLink("Home");
-    }
-    if (elementIsVisibleInViewport(document.getElementById("explore"))) {
-      setActiveLink("Explore");
-    }
-    if (elementIsVisibleInViewport(document.getElementById("planytrip"))) {
-      setActiveLink("Plan Your Trip");
-    }
-    if (elementIsVisibleInViewport(document.getElementById("visapplication"))) {
-      setActiveLink("Visa Application");
-    }
-    if (elementIsVisibleInViewport(document.getElementById("about"))) {
-      setActiveLink("About Sri Lanka");
-    }
-  };
-
-  const [activeLink, setActiveLink] = useState("Home");
-
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
-
-  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,11 +44,9 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", setActiveLinks);
     // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", setActiveLinks);
     };
   }, []);
 
@@ -91,46 +58,69 @@ function Navbar() {
       )}
     >
       <div className="absolute w-full">
-        <div className="container mx-auto px-4 relative lg:text-sm">
-          <div className="py-3 md:py-4 flex justify-between items-center">
-            <div className="flex items-center flex-shrink-0">
-              <a href="#home">
-                <img
-                  className={clsx("mr-2 duration-500 h-12", {
-                    "h-16 md:h-20": !hasScrolled,
-                  })}
-                  src={logo}
-                  alt="Logo"
-                />
-              </a>
+        <div className="container relative px-4 mx-auto lg:text-sm">
+          <div className="flex items-center justify-between py-3 md:py-4">
+            {/* Text-based Logo */}
+            <div className="z-10 flex flex-col items-start flex-shrink-0">
+              <div
+                className={clsx(
+                  "text-4xl font-Qwigley", // Assuming you have this font available
+                  "text-[#0B2838]"
+                )}
+              >
+                Sri Lanka
+              </div>
+              <div
+                className={clsx(
+                  "text-sm font-Prompt", // Assuming you have this font available
+                  "text-[#0B2838]"
+                )}
+              >
+                Tourism Development Authority
+              </div>
             </div>
-            <ul className="hidden lg:flex ml-14 space-x-12 ">
-              {navItems.map((item, index) => (
-                <li
-                  key={index}
-                  className={
-                    activeLink === item.label
-                      ? "bg-text-gradient font-bold text-transparent bg-clip-text"
-                      : undefined
-                  }
+            {/* Navigation Items and Login Button on the right */}
+            <div className="flex items-center">
+              <ul className="hidden space-x-6 lg:flex">
+                {navItems.map((item, index) => (
+                  <li key={index} className="relative">
+                    <div
+                      className={clsx(
+                        "relative px-3 py-2 transition duration-300",
+                        "text-[#0B2838] hover:bg-[#D68631] hover:text-white rounded-[10px]",
+                        "group cursor-pointer"
+                      )}
+                      onClick={() => {
+                        scrolltoHash(item.href);
+                      }}
+                    >
+                      {item.label}
+                      <span
+                        className={clsx(
+                          "absolute left-0 bottom-0 h-[2px] bg-white transition-all duration-300",
+                          "group-hover:w-full w-0",
+                          "rounded-[10px]"
+                        )}
+                      ></span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              {/* Login Button */}
+              <div className="ml-4">
+                <a
+                  href="#login"
+                  className="px-4 py-2 bg-[#0B2838] text-white rounded-[14px] shadow-sm hover:shadow-md transition duration-300"
                 >
-                  <div
-                    className="hover:cursor-pointer"
-                    onClick={() => {
-                      scrolltoHash(item.href);
-                      setActiveLink(item.label);
-                    }}
-                  >
-                    {item.label}
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="lg:hidden md:flex flex-col justify-end">
-              <HamburgerMenu
-                isOpen={mobileDrawerOpen}
-                toggleMenu={toggleNavbar}
-              />
+                  Login
+                </a>
+              </div>
+              <div className="flex-col justify-end lg:hidden md:flex">
+                <HamburgerMenu
+                  isOpen={mobileDrawerOpen}
+                  toggleMenu={toggleNavbar}
+                />
+              </div>
             </div>
           </div>
           {mobileDrawerOpen && (
@@ -161,12 +151,14 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+Navbar.propTypes = {
+  toggleNavbar: PropTypes.func.isRequired,
+};
 
 const HamburgerMenu = ({ toggleMenu, isOpen }) => (
   <button
     onClick={toggleMenu}
-    className="relative w-6 h-4 flex flex-col justify-between items-center group"
+    className="relative flex flex-col items-center justify-between w-6 h-4 group"
   >
     <span
       className={clsx(
@@ -188,3 +180,10 @@ const HamburgerMenu = ({ toggleMenu, isOpen }) => (
     ></span>
   </button>
 );
+
+HamburgerMenu.propTypes = {
+  toggleMenu: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+};
+
+export default Navbar;
