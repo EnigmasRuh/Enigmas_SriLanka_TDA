@@ -1,0 +1,13 @@
+/* In your global CSS or a stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Qwigley&family=Prompt:wght@400;700&display=swap');
+
+/* Apply the fonts */
+.font-Qwigley {
+  font-family: 'Qwigley', cursive;
+}
+
+.font-Prompt {
+  font-family: 'Prompt', sans-serif;
+}
+
+
