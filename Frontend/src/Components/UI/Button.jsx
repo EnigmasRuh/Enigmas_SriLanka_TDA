@@ -1,12 +1,23 @@
-import React from 'react'
+import React from "react";
 
-const Button = (props) => {
-  return (
-    <button className='bg-black  text-white font-[Poppins] py-2 px-6 rounded md:ml-8 hover:bg-indigo-400 
-    duration-500 rounded-sm:'>
-      {props.children}
-    </button>
-  )
-}
+const Button = ({ handleClick, className = "", text, disabled = false, variant = "primary" }) => {
+    const baseClasses = "px-12 py-2 font-semibold rounded-md mb-4 cursor-pointer";
+    const primaryClasses = "bg-primary text-white hover:bg-primary-dark";
+    const secondaryClasses = "bg-secondary text-white hover:bg-secondary-dark";
 
-export default Button
+    return (
+        <button
+            onClick={(e) => handleClick(e)}
+            className={`${baseClasses} ${variant === "primary" ? primaryClasses : secondaryClasses} ${className}`}
+            disabled={disabled}
+        >
+            {text}
+        </button>
+    );
+};
+
+export default Button;
+
+// To use this component
+{/* <Button handleClick={yourFunction} text="Primary Button" variant="primary" />
+<Button handleClick={yourFunction} text="Secondary Button" variant="secondary" /> */}
