@@ -10,8 +10,7 @@ import VisaApplication from "../Pages/VisaApplication/VisaApplication";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import TravelerOnboarding from "../Pages/TravellerOnBoarding/TravellerOnBoarding";
-
-
+import TripDetails from "../Pages/TripDetails/Tripdetails";
 
 const router1 = createBrowserRouter([{
   path : "/",
@@ -32,7 +31,11 @@ const router1 = createBrowserRouter([{
 //   }
 {
   path: "/explore",
-  element: <Explore/>,
+  element: <Explore />,
+},
+{
+  path:'/explore:id',
+  element:<TripDetails/>
 },
 {
   path: "/pytrip",
@@ -52,8 +55,11 @@ const router1 = createBrowserRouter([{
 },{
   path: "/travelerOnboarding",
   element: <TravelerOnboarding/>,
-}
-
+},
+// {
+//   path: "/tripdetails",
+//   element: <TripDetails/>
+// }
 ]
 },
 {   //all
