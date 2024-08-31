@@ -9,6 +9,7 @@ import PyTrip from "../Pages/PYTrip/PYTrip";
 import VisaApplication from "../Pages/VisaApplication/VisaApplication";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import TravelerOnboarding from "../Pages/TravellerOnBoarding/TravellerOnBoarding";
 
 
 
@@ -48,7 +49,10 @@ const router1 = createBrowserRouter([{
 },{
   path: "/Login",
   element: <Login/>,
-},
+},{
+  path: "/travelerOnboarding",
+  element: <TravelerOnboarding/>,
+}
 
 ]
 },
