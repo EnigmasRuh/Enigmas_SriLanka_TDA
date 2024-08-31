@@ -2,7 +2,7 @@ import React from 'react'
 
 const NoUrl = () => {
   return (
-    <div>NoUrl</div>
+    <div className="w-full h-screen flex items-center justify-center  relative z-[-1]">NoUrl</div>
   )
 }
 

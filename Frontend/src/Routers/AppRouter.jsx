@@ -1,8 +1,15 @@
 import {RouterProvider,createBrowserRouter} from "react-router-dom";
 
 import MainLayOut from "../LayOut/LayOut";
-import Home from "../Pages/Home/Home";
+import Landing from "../Pages/Landing/Landing";
 import Login from "../Pages/Login/Login";
+import NoUrl from "../Pages/404/NoUrl";
+import Explore from "../Pages/Explore/Explore";
+import PyTrip from "../Pages/PYTrip/PYTrip";
+import VisaApplication from "../Pages/VisaApplication/VisaApplication";
+import About from "../Pages/About/About";
+import Contact from "../Pages/Contact/Contact";
+
 
 
 const router1 = createBrowserRouter([{
@@ -10,16 +17,45 @@ const router1 = createBrowserRouter([{
   element : <MainLayOut/>,
   children : [{
    index : true,
-   element : <Home/>
-   },
+   element : <Landing/>
+   
+},
+// {
+//     element: <UserProtected/>,
+//     children: [
+//       {
+//         path: "/user",
+//         element: <User/>,
+//       }
+//     ]
+//   }
+{
+  path: "/explore",
+  element: <Explore/>,
+},
+{
+  path: "/pytrip",
+  element: <PyTrip/>,
+},{
+  path: "/visaapplication",
+  element: <VisaApplication/>,
+},{
+  path: "/about",
+  element: <About/>,
+},{
+  path: "/contact",
+  element: <Contact/>,
+},{
+  path: "/Login",
+  element: <Login/>,
+},
+
 ]
 },
-  {path : "/login",
-    children : [{
-      index: true,
-      element : <Login/>,
-    }]},
-
+{   //all
+  path:'*',
+  element:<NoUrl/>
+},
 ]);
 
 const AppRouter = () => {
