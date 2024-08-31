@@ -22,29 +22,28 @@ const TravelerOnboarding = () => {
 
                         {/* Visa Application */}
 
-                        <div className="border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow duration-300">
-                            <h2 className="text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
+                        <div className=" transition-colors duration-500 hover:text-white border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg hover:bg-[#0B2838] transition-shadow duration-300">
+                            <h2 className=" font-prompt text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 40 }}>
                                 <div className='mt-6'>Visa</div>
 
                                 <div className='mt-6 mb-6'>Application</div>
                             </h2>
-                            <p className="text-left text-xl   mb-4" style={{ fontSize: 20, lineHeight: 1.5 }}>
+                            <p className="text-left text-xl font-prompt   mb-4" style={{ fontSize: 20, lineHeight: 1.5 }}>
                                 Get quick assistance and updates on your Electronic Travel Authorization (ETA) application for Sri Lanka.
                             </p>
-                            <button className="bg-gradient-to-r from-orange-600 to-yellow-700 text-white px-6 py-3 rounded-xl flex items-center text-lg" >
+                            <button class="bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg transition-colors duration-300">
                                 <span>Apply Visa</span>
-                                <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" d="M5 15l7-7 7 7"></path>
+                                <svg class="w-6 h-6 ml-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
                                 </svg>
-
                             </button>
                         </div>
 
+
                         {/* Accommodation Finder */}
 
-                        <div className="border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow duration-300">
-                            <h2 className="text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
+                        <div className=" transition-colors duration-500 hover:bg-[#0B2838]  hover:text-white border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow duration-300">
+                            <h2 className=" text-[#D68631] text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
 
                                 <div className='mt-6'>Accommodation</div>
 
@@ -54,19 +53,17 @@ const TravelerOnboarding = () => {
                             <p className="text-left text-xl   mb-4" style={{ fontSize: 20, lineHeight: 1.5 }}>
                                 Discover your perfect stay. Browse and book verified accommodations across Sri Lanka, from luxury resorts to cozy homestays.
                             </p>
-                            <button className="bg-gradient-to-r from-orange-600 to-yellow-700 text-white px-6 py-3 rounded-xl flex items-center text-lg" >
+                            <button class="bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg transition-colors duration-300">
                                 <span>Find Best Places</span>
-                                <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" d="M5 15l7-7 7 7"></path>
+                                <svg class="w-6 h-6 ml-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
                                 </svg>
-
                             </button>
                         </div>
 
                         {/* Transportation Guide */}
-                        <div className="border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow duration-300">
-                            <h2 className="text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
+                        <div className="  transition-colors duration-500 hover:bg-[#0B2838]  hover:text-white border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow duration-300">
+                            <h2 className=" text-[#D68631] text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
 
                                 <div className='mt-6'>Transportation</div>
 
@@ -76,19 +73,17 @@ const TravelerOnboarding = () => {
                             <p className="text-left text-xl   mb-4" style={{ fontSize: 20, lineHeight: 1.5 }}>
                                 Navigate Sri Lanka with ease. Access up-to-date information on local transport options, from scenic train rides to convenient tuk-tuks.
                             </p>
-                            <button className="bg-gradient-to-r from-orange-600 to-yellow-700 text-white px-6 py-3 rounded-xl flex items-center text-lg" >
+                            <button class="bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg transition-colors duration-300">
                                 <span>Learn More</span>
-                                <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" d="M5 15l7-7 7 7"></path>
+                                <svg class="w-6 h-6 ml-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
                                 </svg>
-
                             </button>
                         </div>
 
                         {/* Travel Packages */}
-                        <div className="border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow duration-300">
-                            <h2 className="text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
+                        <div className=" hover:bg-[#0B2838] transition-colors duration-500  hover:text-white border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow bg-white">
+                            <h2 className=" text-[#D68631] text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
 
 
 
@@ -103,20 +98,18 @@ const TravelerOnboarding = () => {
                                 Explore curated travel packages that offer convenient transport and experiences across Sri Lanka.
                             </p>
 
-                            <button className="bg-gradient-to-r from-orange-600 to-yellow-700 text-white px-6 py-3 rounded-xl flex items-center text-lg" >
-                                <span>Explore All</span>
-                                <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" d="M5 15l7-7 7 7"></path>
+                            <button class="bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg transition-colors duration-300">
+                                <span>Explore packages</span>
+                                <svg class="w-6 h-6 ml-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
                                 </svg>
-
                             </button>
 
                         </div>
 
                         {/* Just Explore */}
-                        <div className="col-span-1 md:col-span-2 lg:col-span-2 bg-gray-800 border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow duration-300">
-                            <h2 className="text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
+                        <div className="col-span-1 md:col-span-2 lg:col-span-2 bg-[#0B2838] border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg transition-shadow duration-300">
+                            <h2 className="text-[#D68631] text-left text-xl font-semibold text-amber-700 mb-4" style={{ fontSize: 40 }}>
 
 
                                 <div className='mt-6'>Just</div>
@@ -127,16 +120,14 @@ const TravelerOnboarding = () => {
 
 
                             </h2>
-                            <p className="text-left text-xl   mb-10" style={{ fontSize: 20, lineHeight: 1.5 , color: 'white' }}>
+                            <p className="text-left text-xl   mb-10" style={{ fontSize: 20, lineHeight: 1.5, color: 'white' }}>
                                 Discover all available travel resources and insider tips for navigating Sri Lanka effortlessly, ensuring a seamless and enriching travel experience.
                             </p>
-                            <button className="bg-gradient-to-r from-orange-600 to-yellow-700 text-white px-6 py-3 rounded-xl flex items-center text-lg" >
+                            <button class="bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg transition-colors duration-300">
                                 <span>Explore All</span>
-                                <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" d="M5 15l7-7 7 7"></path>
+                                <svg class="w-6 h-6 ml-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
                                 </svg>
-
                             </button>
                         </div>
                     </div>
