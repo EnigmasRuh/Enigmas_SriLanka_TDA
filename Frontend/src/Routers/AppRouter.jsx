@@ -11,7 +11,7 @@ const router1 = createBrowserRouter([{
   element : <MainLayOut/>,
   children : [{
    index : true,
-   element : <Home/>
+   element : <TravelerOnboarding/>
    },
 ]
 },
