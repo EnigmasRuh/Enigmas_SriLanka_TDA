@@ -1,13 +1,16 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import AuthProvider from "./Contexts/Authprovider.jsx";
 
-createRoot(document.getElementById("root")).render(
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import ProtectedRoute from './Routers/ProtectedRoute.jsx'
+import AuthProvider from './Contexts/Authprovider.jsx'
+
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+    <App />
+
     </AuthProvider>
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)

@@ -13,7 +13,6 @@ import TravelerOnboarding from "../Pages/TravellerOnBoarding/TravellerOnBoarding
 import TripDetails from "../Pages/TripDetails/Tripdetails";
 import ProtectedRoute from "../Routers/ProtectedRoute";
 
-
 const router1 = createBrowserRouter([{
   path : "/",
   element : <MainLayOut/>,
@@ -34,6 +33,7 @@ const router1 = createBrowserRouter([{
 {
   path: "/explore",
   element: <ProtectedRoute><Explore /></ProtectedRoute>,
+
 },
 {
   path:'/explore:id',
