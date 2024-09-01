@@ -11,6 +11,8 @@ import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import TravelerOnboarding from "../Pages/TravellerOnBoarding/TravellerOnBoarding";
 import TripDetails from "../Pages/TripDetails/Tripdetails";
+import ProtectedRoute from "../Routers/ProtectedRoute";
+
 
 const router1 = createBrowserRouter([{
   path : "/",
@@ -31,7 +33,7 @@ const router1 = createBrowserRouter([{
 //   }
 {
   path: "/explore",
-  element: <Explore />,
+  element: <ProtectedRoute><Explore /></ProtectedRoute>,
 },
 {
   path:'/explore:id',

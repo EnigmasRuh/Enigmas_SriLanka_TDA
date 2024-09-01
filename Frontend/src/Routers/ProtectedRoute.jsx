@@ -4,7 +4,7 @@ import { useAuth } from '../Contexts/Authprovider';
 
 export default function ProtectedRoute({children}) {
 
-    const user = useAuth();
+    const {user} = useAuth();
     
     const navigate = useNavigate();
     
