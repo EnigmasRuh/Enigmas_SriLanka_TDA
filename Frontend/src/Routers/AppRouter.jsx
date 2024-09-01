@@ -11,7 +11,7 @@ import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import TravelerOnboarding from "../Pages/TravellerOnBoarding/TravellerOnBoarding";
 import TripDetails from "../Pages/TripDetails/Tripdetails";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "../Routers/ProtectedRoute";
 
 const router1 = createBrowserRouter([{
   path : "/",
@@ -32,7 +32,8 @@ const router1 = createBrowserRouter([{
 //   }
 {
   path: "/explore",
-  element:  <ProtectedRoute><Explore/></ProtectedRoute>,
+  element: <ProtectedRoute><Explore /></ProtectedRoute>,
+
 },
 {
   path:'/explore:id',
@@ -51,7 +52,7 @@ const router1 = createBrowserRouter([{
   path: "/contact",
   element: <Contact/>,
 },{
-  path: "/Login",
+  path: "/login",
   element: <Login/>,
 },{
   path: "/travelerOnboarding",
