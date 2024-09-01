@@ -7,6 +7,9 @@ export default {
         'Qwigley': ['Qwigley', 'cursive'],
         'Prompt': ['Prompt', 'sans-serif'],
       },
+      backgroundImage: {
+        'login-bg': "url('src/assets/login_bg.jpg')"
+      }
     },
   },
   plugins: [],
