@@ -58,10 +58,10 @@ const router1 = createBrowserRouter([{
   path: "/travelerOnboarding",
   element: <TravelerOnboarding/>,
 },
-// {
-//   path: "/tripdetails",
-//   element: <TripDetails/>
-// }
+{
+  path: "/tripdetails",
+  element: <TripDetails/>
+}
 ]
 },
 {   //all
