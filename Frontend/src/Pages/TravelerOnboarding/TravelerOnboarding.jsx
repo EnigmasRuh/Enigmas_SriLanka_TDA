@@ -14,7 +14,7 @@ const TravelerOnboarding = () => {
 
             <section className="py-10 bg-white" style={{ marginTop: 60 }}>
                 <div className="container mx-auto text-center">
-                    <h1 className="text-4xl font-bold mb-2 font-prompt" style={{ fontSize: 70 }}>How can we help you?</h1>
+                    <h1 className="text-4xl font-bold mb-2 font-[Prompt] " style={{ fontSize: 70 }}>How can we help you?</h1>
                     <p className="text-gray-500 mb-8" style={{ fontSize: 20, marginTop: 25 }}>
                         Seamlessly organize your Sri Lankan adventure with our comprehensive planning tools.
                     </p>
