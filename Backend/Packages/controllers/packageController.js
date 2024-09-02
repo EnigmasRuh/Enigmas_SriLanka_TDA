@@ -10,6 +10,16 @@ const createPackage = async (req, res) => {
   }
 };
 
+const getAllPackages = async (req, res) => {
+  try {
+    const packages = await Package.find();
+    res.status(200).json(packages);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
 module.exports = {
   createPackage,
+  getAllPackages,
 };
