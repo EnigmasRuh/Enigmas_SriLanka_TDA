@@ -6,7 +6,6 @@ const ADMIN_URL = "http://localhost:3000/admin";
 
 let isAdmin = false;
 
-// Handle successful login
 const loginSuccess = (req, res) => {
   if (req.user) {
     res.status(200).json({
@@ -17,7 +16,6 @@ const loginSuccess = (req, res) => {
   }
 };
 
-// Handle failed login
 const loginFailed = (req, res) => {
   res.status(401).json({
     success: false,
@@ -26,18 +24,15 @@ const loginFailed = (req, res) => {
   res.redirect(CLIENT_URL);
 };
 
-// Handle logout
 const logout = (req, res) => {
   req.logout();
   res.redirect(CLIENT_URL);
 };
 
-// Initiate Google authentication
 const googleAuth = passport.authenticate("google", {
   scope: ["profile", "email"],
 });
 
-// Initiate Google authentication for admin
 const googleAdminAuth = (req, res, next) => {
   isAdmin = true;
   passport.authenticate("google", { scope: ["profile", "email"] })(
@@ -47,7 +42,6 @@ const googleAdminAuth = (req, res, next) => {
   );
 };
 
-// Handle Google authentication callback
 const googleCallback = async (req, res) => {
   try {
     let user = await User.findOne({ googleId: req.user.googleId });
