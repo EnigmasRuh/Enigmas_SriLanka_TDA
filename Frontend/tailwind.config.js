@@ -2,7 +2,15 @@
 export default {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'Qwigley': ['Qwigley', 'cursive'],
+        'Prompt': ['Prompt', 'sans-serif'],
+      },
+      backgroundImage: {
+        'login-bg': "url('src/assets/login_bg.jpg')"
+      }
+    },
   },
   plugins: [],
 }

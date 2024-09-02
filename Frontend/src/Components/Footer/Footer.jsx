@@ -1,59 +1,67 @@
 import React from "react"
-
+import x from '../../assets/twitter-alt-circle.png';
+import fb from '../../assets/facebook.png';
+import ig from '../../assets/instagram.png';
+import linkedin from '../../assets/linkedin.png';
+import clsx from "clsx";
 function Footer() {
   return (
     <section className="relative">
-      <hr className="h-px my-4 bg-gray-800 border-0"/>
+      <hr className="h-px my-4 bg-[#D68631] border-0" />
+
       <div className="container py-6">
         <div className="md:flex justify-between">
           <div className="max-w-[50ch]">
-            <p className="font-bold text-2xl md:text-5xl pb-4 bg-text-gradient text-transparent bg-clip-text">SLSYWC&apos;24</p>
+            <div
+              className={clsx(
+                "text-7xl font-Qwigley", // Assuming you have this font available
+                "text-[#0B2838]"
+              )}
+            >
+              Sri Lanka
+            </div>
             <p>
-              IEEE SLSYW Congress, the flagship event of the IEEE Sri Lanka
-              Section promotes fostering technological innovation while
-              providing opportunities for the undergraduates of the country,
-              to network, and brainstorm.
+              A land where history whispers from ancient ruins, where nature paints with vibrant hues, and where warm smiles greet you at every turn.
+              Embark on a journey through our island paradise and uncover experiences that will captivate your senses and touch your soul.
             </p>
           </div>
           <div className="py-6 md:py-0 min-w-[30ch]">
             <h4 className="font-bold pb-2">General Links</h4>
             <ul >
-              <li className="underline mb-1">
-                <a href="https://ieee.lk/"  target="_blank">IEEE Sri Lanka Section</a>
+              <li className="mb-1">
+                <a href="https://ieee.lk/" target="_blank">Sri Lanka International Travel Information</a>
               </li>
-              <li className="underline mb-1">
-                <a href="https://ieee.lk/community/student-activities-committee/"  target="_blank">SLSAC</a>
+              <li className="mb-1">
+                <a href="https://ieee.lk/community/student-activities-committee/" target="_blank">Sri Lanka Travel Advisory</a>
               </li>
-              <li className="underline mb-1">
-                <a href="https://ieee.lk/community/young-professionals/"  target="_blank">Young Professionals</a>
+              <li className="mb-1">
+                <a href="https://ieee.lk/community/young-professionals/" target="_blank">Sri Lanka Tourism Development Authority: SLTDA</a>
               </li>
-              <li className="underline mb-1">
-                <a href="https://ieeewie.lk/"  target="_blank">WIE</a>
-              </li>
+
             </ul>
           </div>
           <div>
             <h4 className="font-bold pb-4  min-w-[30ch]">Social Media Links</h4>
             <div className="flex items-center gap-4 ">
               <a href="https://www.facebook.com/IEEESLSYWC/" target="_blank">
-                <img src="/assets/social/fb_logo.svg" alt="" className="h-8" />
+                <img src={fb} alt="" className="h-8" />
               </a>
               <a href="https://www.instagram.com/ieeeslsywc/?hl=en" target="_blank">
                 <img
-                  src="/assets/social/instagram_logo.svg"
+                  src={ig}
                   alt=""
                   className="h-8"
                 />
               </a>
               <a href="https://www.linkedin.com/company/ieee-slsywc/?originalSubdomain=lk" target="_blank">
                 <img
-                  src="/assets/social/linkedin_logo.svg"
+                  src={linkedin}
                   alt=""
                   className="h-8"
                 />
               </a>
               <a href="https://x.com/ieeeslsywc" target="_blank">
-                <img src="/assets/social/x_logo.svg" alt="" className="h-7" />
+                <img src={x} alt="" className="h-7" />
               </a>
             </div>
           </div>

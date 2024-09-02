@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import './Navbar.css';
+import { useNavigate } from "react-router-dom";
 
 const navItems = [
-  { label: "Home", href: "home" },
-  { label: "Explore", href: "explore" },
-  { label: "Plan Your Trip", href: "planytrip" },
-  { label: "Visa Application", href: "visapplication" },
-  { label: "About Sri Lanka", href: "about" },
-  { label: "Contact", href: "contact" },
+  { label: "Home", href: "/" },
+  { label: "Explore", href: "/explore" },
+  { label: "Plan Your Trip", href: "/pytrip" },
+  { label: "Visa Application", href: "/visaapplication" },
+  { label: "About Sri Lanka", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
   const scrolltoHash = (element_id) => {
     const element = document.getElementById(element_id);
 
@@ -29,6 +32,7 @@ function Navbar() {
 
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
@@ -50,6 +54,11 @@ function Navbar() {
     };
   }, []);
 
+  const handleNavigation = (href) => {
+    setMobileDrawerOpen(false); // Close the mobile drawer when a navigation item is clicked
+    navigate(href); // Navigate to the specified route
+  };
+
   return (
     <nav
       className={clsx(
@@ -64,7 +73,7 @@ function Navbar() {
             <div className="z-10 flex flex-col items-start flex-shrink-0">
               <div
                 className={clsx(
-                  "text-4xl font-Qwigley", // Assuming you have this font available
+                  "text-7xl font-Qwigley my-0", 
                   "text-[#0B2838]"
                 )}
               >
@@ -72,7 +81,7 @@ function Navbar() {
               </div>
               <div
                 className={clsx(
-                  "text-sm font-Prompt", // Assuming you have this font available
+                  "text-sm font-Prompt my-0 ", 
                   "text-[#0B2838]"
                 )}
               >
@@ -90,9 +99,7 @@ function Navbar() {
                         "text-[#0B2838] hover:bg-[#D68631] hover:text-white rounded-[10px]",
                         "group cursor-pointer"
                       )}
-                      onClick={() => {
-                        scrolltoHash(item.href);
-                      }}
+                      onClick={() => handleNavigation(item.href)}
                     >
                       {item.label}
                       <span
@@ -112,7 +119,9 @@ function Navbar() {
                   href="#login"
                   className="px-4 py-2 bg-[#0B2838] text-white rounded-[14px] shadow-sm hover:shadow-md transition duration-300"
                 >
-                  Login
+
+                  {localStorage.getItem('auth-token')?"Name of the user":"Login"}
+
                 </a>
               </div>
               <div className="flex-col justify-end lg:hidden md:flex">
