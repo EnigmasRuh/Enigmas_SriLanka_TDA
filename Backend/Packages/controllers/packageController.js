@@ -19,7 +19,20 @@ const getAllPackages = async (req, res) => {
   }
 };
 
+const getPackageById = async (req, res) => {
+  try {
+    const package = await Package.findById(req.params.id);
+    if (!package) {
+      return res.status(404).json({ message: "Package not found" });
+    }
+    res.status(200).json(package);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
 module.exports = {
   createPackage,
   getAllPackages,
+  getPackageById,
 };
