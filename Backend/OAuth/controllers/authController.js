@@ -58,8 +58,9 @@ const googleCallback = async (req, res) => {
         { $set: { isUser: false } }
       );
     }
+    let user1 = await User.findOne({ googleId: req.user.googleId });
 
-    if (user.isAdmin) {
+    if (user1.isAdmin) {
       return res.redirect(ADMIN_URL);
     } else {
       return res.redirect(CLIENT_URL);
