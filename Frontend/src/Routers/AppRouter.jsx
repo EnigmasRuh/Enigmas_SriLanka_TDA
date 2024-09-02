@@ -12,6 +12,7 @@ import Contact from "../Pages/Contact/Contact";
 import TravelerOnboarding from "../Pages/TravelerOnboarding/TravelerOnboarding";
 import TripDetails from "../Pages/TripDetails/Tripdetails";
 import ProtectedRoute from "../Routers/ProtectedRoute";
+import VisaProcessProgression from "../Pages/VisaProcessProgress/VisaProcessProgress";
 
 const router1 = createBrowserRouter([{
   path : "/",
@@ -61,6 +62,10 @@ const router1 = createBrowserRouter([{
 {
   path: "/tripdetails",
   element: <TripDetails/>
+},
+{
+  path: "/visaprocessprogression",
+  element: <VisaProcessProgression/>
 }
 ]
 },
