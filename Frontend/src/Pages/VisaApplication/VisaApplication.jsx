@@ -4,7 +4,7 @@ const VisaApplication = () => {
   return (
     <div className="w-full min-h-screen bg-white p-8" style={{ paddingTop: "120px" }}>
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
+
         <h1 className="text-3xl font-bold mb-4 text-center" style={{ color: '#D58752' }}>
           Sri Lanka Visa Information
         </h1>
@@ -13,13 +13,11 @@ const VisaApplication = () => {
           Learn about eligibility, required documents, and processing times.
         </p>
 
-        {/* Visa Types Overview */}
         <section>
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#D58752' }}>
             Visa Types Overview
           </h2>
 
-          {/* Tourist Visa */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-2" style={{ color: '#D58752' }}>
               Tourist Visa
@@ -42,7 +40,6 @@ const VisaApplication = () => {
             </div>
           </div>
 
-          {/* Business Visa */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-2" style={{ color: '#D58752' }}>
               Business Visa
@@ -65,7 +62,6 @@ const VisaApplication = () => {
             </div>
           </div>
 
-          {/* Transit Visa */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-2" style={{ color: '#D58752' }}>
               Transit Visa
@@ -87,7 +83,6 @@ const VisaApplication = () => {
             </div>
           </div>
 
-          {/* Eligibility Requirements */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-2" style={{ color: '#D58752' }}>
               Eligibility Requirements
@@ -99,7 +94,6 @@ const VisaApplication = () => {
             </ul>
           </div>
 
-          {/* Visa Validity and Stay Duration */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-2" style={{ color: '#D58752' }}>
               Visa Validity and Stay Duration
@@ -111,7 +105,7 @@ const VisaApplication = () => {
             </ul>
           </div>
 
-          {/* Application Process Overview */}
+         
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-2" style={{ color: '#D58752' }}>
               Application Process Overview
@@ -124,7 +118,6 @@ const VisaApplication = () => {
             </ol>
           </div>
 
-          {/* Visa Fees and Processing Time */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-2" style={{ color: '#D58752' }}>
               Visa Fees and Processing Time
@@ -141,7 +134,6 @@ const VisaApplication = () => {
             </ul>
           </div>
 
-          {/* Important Notices */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-2" style={{ color: '#D58752' }}>
               Important Notices
