@@ -8,14 +8,14 @@ let isAdmin = false;
 
 const loginSuccess = (req, res) => {
   if (req.user) {
+    const { _id, googleId, ...userWithoutIds } = req.user.toObject();
     res.status(200).json({
       success: true,
       message: "successful",
-      user: req.user,
+      user: userWithoutIds,
     });
   }
 };
-
 const loginFailed = (req, res) => {
   res.status(401).json({
     success: false,
