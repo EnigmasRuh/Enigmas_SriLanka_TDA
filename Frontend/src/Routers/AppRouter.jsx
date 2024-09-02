@@ -1,25 +1,31 @@
 import {RouterProvider,createBrowserRouter} from "react-router-dom";
-
 import MainLayOut from "../LayOut/LayOut";
 import Landing from "../Pages/Landing/Landing";
 import Login from "../Pages/Login/Login";
+import TravelerOnboarding from "../Pages/TravelerOnboarding/TravelerOnboarding";
 import NoUrl from "../Pages/404/NoUrl";
 import Explore from "../Pages/Explore/Explore";
 import PyTrip from "../Pages/PYTrip/PYTrip";
 import VisaApplication from "../Pages/VisaApplication/VisaApplication";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
-import TravelerOnboarding from "../Pages/TravellerOnBoarding/TravellerOnBoarding";
 import TripDetails from "../Pages/TripDetails/Tripdetails";
 import ProtectedRoute from "../Routers/ProtectedRoute";
+
 
 const router1 = createBrowserRouter([{
   path : "/",
   element : <MainLayOut/>,
   children : [{
    index : true,
+
+   element : <TravelerOnboarding/>
+   },
+]
+
    element : <Landing/>
    
+
 },
 // {
 //     element: <UserProtected/>,
@@ -33,6 +39,19 @@ const router1 = createBrowserRouter([{
 {
   path: "/explore",
   element: <ProtectedRoute><Explore /></ProtectedRoute>,
+
+
+    {
+      path: "/traveler-onboarding",
+      children: [
+        {
+          index: true,
+          element: <TravelerOnboarding/>,
+        },
+      ],
+    }
+    
+
 
 },
 {
@@ -68,6 +87,7 @@ const router1 = createBrowserRouter([{
   path:'*',
   element:<NoUrl/>
 },
+
 ]);
 
 const AppRouter = () => {
