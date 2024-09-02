@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const PackageSchema = new mongoose.Schema({
   packageName: {
-    // Corrected typo in variable name
     type: String,
     required: true,
   },

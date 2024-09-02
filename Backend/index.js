@@ -6,6 +6,7 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 require("./OAuth/passport");
 const authRouter = require("./OAuth/routers/authRouter");
+const packageRouter = require("./Packages/routers/packageRouter");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -33,6 +34,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/auth", authRouter);
+app.use("/packages", packageRouter);
 
 // Connect to MongoDB
 mongoose
