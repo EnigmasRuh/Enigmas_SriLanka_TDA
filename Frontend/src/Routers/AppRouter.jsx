@@ -10,7 +10,7 @@ import VisaApplication from "../Pages/VisaApplication/VisaApplication";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import TravelerOnboarding from "../Pages/TravellerOnBoarding/TravellerOnBoarding";
-import TripDetails from "../Pages/TripDetails/Tripdetails";
+import TripDetails from "../Pages/TripDetailss/TripDetails";
 
 const router1 = createBrowserRouter([{
   path : "/",
@@ -55,11 +55,10 @@ const router1 = createBrowserRouter([{
 },{
   path: "/travelerOnboarding",
   element: <TravelerOnboarding/>,
-},
-// {
-//   path: "/tripdetails",
-//   element: <TripDetails/>
-// }
+},{
+  path: "/tripdetails",
+  element: <TripDetails/>
+}
 ]
 },
 {   //all

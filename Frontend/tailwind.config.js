@@ -7,8 +7,12 @@ export default {
         'Qwigley': ['Qwigley', 'cursive'],
         'Prompt': ['Prompt', 'sans-serif'],
       },
+      colors: {
+        'custom-orange': '#D68631',
+        'custom-blue': '#0B2838',
+        'lighter-blue': '#3D717E',
+      },
     },
   },
   plugins: [],
 }
-
