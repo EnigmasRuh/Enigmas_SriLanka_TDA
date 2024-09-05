@@ -10,7 +10,9 @@ export default {
         'Prompt': ['Prompt', 'sans-serif'],
       },
       backgroundImage: {
-        'login-bg': "url('src/assets/login_bg.jpg')"
+        'login-bg': "url('src/assets/login_bg.jpg')",
+        'service-register-bg': "url('src/assets/service-register-bg.png')",
+        'traveller-register-bg': "url('src/assets/traveller-register-bg.jpg')"
       },
       colors: {
         'custom-orange': '#D68631',
