@@ -3,6 +3,8 @@ import {RouterProvider,createBrowserRouter} from "react-router-dom";
 import MainLayOut from "../LayOut/LayOut";
 import Landing from "../Pages/Landing/Landing";
 import Login from "../Pages/Login/Login";
+import ServiceSignUp from "../Pages/ServiceSignUp/ServiceSignUp";
+import TravellerSignUp from "../Pages/TravellerSignUp/TravellerSignUp";
 import NoUrl from "../Pages/404/NoUrl";
 import Explore from "../Pages/Explore/Explore";
 import PyTrip from "../Pages/PYTrip/PYTrip";
@@ -55,6 +57,12 @@ const router1 = createBrowserRouter([{
 },{
   path: "/login",
   element: <Login/>,
+},{
+  path: "/service-register",
+  element: <ServiceSignUp/>,
+},{
+  path: "/traveller-register",
+  element: <TravellerSignUp/>,
 },{
   path: "/travelerOnboarding",
   element: <TravelerOnboarding/>,

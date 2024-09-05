@@ -8,7 +8,6 @@ const LoginForm = () => {
     <span className='pt-2 text-center text-[16px]'>Sri Lanka Tourism Development Authority</span>
 
     <div className='w-[360px] content-center flex flex-col justify-center'>
-
     <div className='flex flex-col gap-0 pt-5'>
         <span className='text-[16px]'>Email or Username</span>
         <input type="text" className='my-2 h-[45px] rounded-lg border border-gray-600 text-gray-900 text-sm w-full p-2.5' placeholder='Enter your email'/>
@@ -29,7 +28,6 @@ const LoginForm = () => {
         <p className='font-light'>Create an account ?</p>
         <p className='font-semibold pl-1'>Sign Up</p>
     </div>
-
 </div>
   )
 }
