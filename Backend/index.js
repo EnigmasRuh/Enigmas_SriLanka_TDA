@@ -6,7 +6,8 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 require("./OAuth/passport");
 const authRouter = require("./OAuth/routers/authRouter");
-const packageRouter = require("./Packages/routers/packageRouter");
+const packageRouter = require("./Features/Packages/routers/packageRouter");
+const visaApplicationRoutes = require("./Features/VisaApplication/routes/visaaplication.routes");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -35,6 +36,7 @@ app.use(passport.session());
 
 app.use("/auth", authRouter);
 app.use("/packages", packageRouter);
+app.use('/api/visa-applications', visaApplicationRoutes);
 
 // Connect to MongoDB
 mongoose
