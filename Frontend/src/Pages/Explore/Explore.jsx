@@ -64,11 +64,19 @@ function ExplorePage() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {mockTrips.map(trip => (
+<<<<<<< HEAD
           <TripCard key={trip.id} trip={trip} />
+=======
+          <TripCard key={trip.id} trip={trip}  />
+>>>>>>> c5854ac2ea1542b9014876e0dd883c97ed71a7a6
         ))}
       </div>
     </div>
   );
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> c5854ac2ea1542b9014876e0dd883c97ed71a7a6
 export default ExplorePage;

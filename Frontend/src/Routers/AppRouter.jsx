@@ -9,8 +9,10 @@ import PyTrip from "../Pages/PYTrip/PYTrip";
 import VisaApplication from "../Pages/VisaApplication/VisaApplication";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
-
-
+import TravelerOnboarding from "../Pages/TravelerOnboarding/TravelerOnboarding";
+import TripDetails from "../Pages/TripDetails/Tripdetails";
+import ProtectedRoute from "../Routers/ProtectedRoute";
+import VisaProcessProgression from "../Pages/VisaProcessProgress/VisaProcessProgress";
 
 const router1 = createBrowserRouter([{
   path : "/",
@@ -31,7 +33,12 @@ const router1 = createBrowserRouter([{
 //   }
 {
   path: "/explore",
-  element: <Explore/>,
+  element: <ProtectedRoute><Explore /></ProtectedRoute>,
+
+},
+{
+  path:'/explore:id',
+  element:<TripDetails/>
 },
 {
   path: "/pytrip",
@@ -46,10 +53,20 @@ const router1 = createBrowserRouter([{
   path: "/contact",
   element: <Contact/>,
 },{
-  path: "/Login",
+  path: "/login",
   element: <Login/>,
+},{
+  path: "/travelerOnboarding",
+  element: <TravelerOnboarding/>,
 },
-
+{
+  path: "/tripdetails",
+  element: <TripDetails/>
+},
+{
+  path: "/visaprocessprogression",
+  element: <VisaProcessProgression/>
+}
 ]
 },
 {   //all
