@@ -8,7 +8,7 @@ const createCheckoutSession = async (req, res) => {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "buy me a coffee",
+              name: "visa payment",
             },
             unit_amount: 1000,
           },
@@ -20,10 +20,12 @@ const createCheckoutSession = async (req, res) => {
       cancel_url: "http://localhost:5173",
     });
 
-    console.log(session); // Log the session object here
+    console.log(session);
 
-    // Send the session URL to the client
-    res.json({ url: session.url });
+    res.json({
+      url: session.url,
+      message: "Payment session created successfully",
+    });
   } catch (error) {
     console.error("Error creating Stripe checkout session:", error.message);
     res.status(500).send("Internal Server Error");
