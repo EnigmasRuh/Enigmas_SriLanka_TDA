@@ -72,7 +72,7 @@ function Navbar() {
             <div className="z-10 flex flex-col items-start flex-shrink-0">
               <div
                 className={clsx(
-                  "text-7xl font-Qwigley my-0", 
+                  "text-4xl font-Qwigley my-0", 
                   "text-[#0B2838]"
                 )}
               >

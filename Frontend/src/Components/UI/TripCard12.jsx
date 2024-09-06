@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import bcoverImage from '../../assets/bcoverImage.png';
+import bcoverImage from '../../assets/bcoverImage2.png';
 import iconSrc from '../../assets/Icon.png';
 
 const ExploreCard = () => {
@@ -22,7 +22,7 @@ const ExploreCard = () => {
       />
       <div className="text-left">
         <p className="text-[16px] font-light text-[#0B2838] ">
-          Explore 2000 years of history through UNESCO World Heritage sites. From sacred temples to majestic fortresses.
+        Surf, hike, raft, or safari - thrilling experiences await adventure enthusiasts across the island.
         </p>
         <button
             onClick={handleExploreMoreClick}
