@@ -60,6 +60,16 @@ function ExplorePage() {
     }
   ];
 
+  fetch('http://localhost:5000/api/packages', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  }).then(response => response.json()).then(data => {
+    mockTrips = data;
+  }
+
+  )
 
   return (
     <div className="pt-36 p-4">
