@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import bcoverImage from '../../assets/logo.png';
 
 
 const ProductCard = ({trip}) => {
@@ -16,7 +15,7 @@ const ProductCard = ({trip}) => {
       className="relative flex flex-col justify-between p-4 mb-4 transition duration-200 ease-in-out border border-transparent shadow-lg cursor-pointer rounded-[45px] bg-white w-full max-w-[438px] mx-auto hover:bg-[#D68631] group"
     >
       <img   
-        src={bcoverImage} 
+        src={trip.image} 
         alt="Sri Lanka Explorer"
         className="object-cover mb-4 rounded-[29.25px] w-full h-[279.75px] shadow-[0_4px_10px_rgba(255,255,255,0.3)]"
       />
