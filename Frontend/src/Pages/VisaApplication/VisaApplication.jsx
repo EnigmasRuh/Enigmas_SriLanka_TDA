@@ -26,6 +26,9 @@ const VisaApplication = () => {
     const handleNavigate = () => {
       navigate(`/visaapplication/details`);  // Navigates to the TripDetails page with the trip ID
     };
+    const handleNavigate1 = () => {
+        navigate(`/visaapplication/form`);  // Navigates to the TripDetails page with the trip ID
+    };
   
     return (
         <div className="w-full h-screen p-8 bg-white flex flex-col items-center justify-between"  style={{ paddingTop: "120px", marginBottom: "80px"}}>
@@ -68,7 +71,7 @@ const VisaApplication = () => {
                         <h2 className="text-xl font-semibold mb-4">Visa Application</h2>
                         <p>Start your visa application process with step-by-step guidance and form submission</p>
                     </div>
-                    <button className="bg-[#D58752] text-[#112240] font-bold py-2 px-4 mt-6 rounded-lg">Apply Now</button>
+                    <button className="bg-[#D58752] text-[#112240] font-bold py-2 px-4 mt-6 rounded-lg" onClick={handleNavigate1}>Apply Now</button>
                 </div>
                 
 

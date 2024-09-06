@@ -12,8 +12,6 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useNavigate } from 'react-router-dom';
 
-
-
 const FormPage1 = () => {
 
   const navigate = useNavigate();
@@ -22,12 +20,11 @@ const FormPage1 = () => {
 
     console.log(values);
 
-    // navigate('/visaapplication2'); // Navigate to the desired route
+    navigate('/visaapplication/form/next'); // Navigate to the desired route
   };
 
   const [values, setValues] = useState({
     personalInfo: {
-
       fullName: '',
       dateOfBirth: '',
       gender: '',
