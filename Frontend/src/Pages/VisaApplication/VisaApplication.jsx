@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const VisaApplication = () => {
   const navigate = useNavigate();
+
+
 
   // Define the steps in the visa process
   const steps = [
@@ -29,6 +31,10 @@ const VisaApplication = () => {
   const handleNavigate1 = () => {
     navigate(`/visaapplication/form`);  // Navigates to the TripDetails page with the trip ID
   };
+  const handleNavigate2 = () => {
+    navigate(`/visaapplication/doc`);  // Navigates to the TripDetails page with the trip ID
+  }
+  
 
   return (
     <div className="w-full h-screen p-8 bg-white flex flex-col items-center justify-between" style={{ paddingTop: "120px", marginBottom: "250px" }}>
@@ -77,7 +83,7 @@ const VisaApplication = () => {
           >
             Learn about the types of visas available and the requirements for traveling to Sri Lanka
           </p>
-          <button className="hover:bg-none bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg ">
+          <button className="hover:bg-none bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg  " onClick={handleNavigate}>
             <span>Learn More</span>
             <svg
               className="w-6 h-6 ml-4 text-gray-800 dark:text-white"
@@ -109,7 +115,7 @@ const VisaApplication = () => {
           </h2>
           <p className="text-left text-xl   mb-4" style={{ fontSize: 20, lineHeight: 1.5 }}>
           Start your visa application process with step-by-step guidance and form submission          </p>
-          <button className=" hover:bg-none bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg ">
+          <button className=" hover:bg-none bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg " onClick={handleNavigate1}>
             <span>Apply Now</span>
             <svg className="w-6 h-6 ml-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
@@ -131,7 +137,7 @@ const VisaApplication = () => {
           <button
   style={{ width: "186px", height: "56px" }}
   className="hover:bg-none bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex justify-center items-center text-lg"
->
+   onClick={handleNavigate2}>
   <span>Check</span>
   <svg
     className="w-6 h-6 ml-2 text-gray-800 dark:text-white"

@@ -17,6 +17,7 @@ import VisaApplication from "../Pages/VisaApplication/VisaApplication";
 import VisaInfo from "../Pages/VisaInfo/VisaInfo";
 import FormPage1 from "../Pages/FormPage1/FormPage1";
 import FormPage2 from "../Pages/FormPage2/FormPage2";
+import DocumentFeez from "../Pages/DocumentFeez/DocumentFeez";
 
 
 const router1 = createBrowserRouter([{
@@ -82,7 +83,10 @@ const router1 = createBrowserRouter([{
   },{
     path: "/visaapplication/form/next",
     element: <FormPage2/>
-  }
+  },{
+    path: "/visaapplication/doc",
+    element: <DocumentFeez/>
+  },
   ]
 },
 {   //all
