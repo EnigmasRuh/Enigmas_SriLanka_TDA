@@ -68,7 +68,6 @@ function ExplorePage() {
   }).then(response => response.json()).then(data => {
     mockTrips = data;
   }
-
   )
 
   return (

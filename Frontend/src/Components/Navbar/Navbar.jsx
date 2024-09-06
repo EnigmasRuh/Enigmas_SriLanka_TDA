@@ -132,7 +132,7 @@ function Navbar() {
             </div>
           </div>
           {mobileDrawerOpen && (
-            <div className="fixed right-0 z-20 bg-[#01224D] w-full pt-2 flex flex-col justify-center lg:hidden">
+            <div className="fixed right-0 z-20 bg-[#0B2838] w-full pt-2 flex flex-col justify-center lg:hidden">
               <ul>
                 {navItems.map((item, index) => (
                   <li
@@ -167,22 +167,23 @@ const HamburgerMenu = ({ toggleMenu, isOpen }) => (
   <button
     onClick={toggleMenu}
     className="relative flex flex-col items-center justify-between w-6 h-4 group"
+    style={{ margin: '20px' }}
   >
     <span
       className={clsx(
-        "block w-full h-0.5 bg-text-gradient transform transition duration-300",
+        "block w-full h-0.5 bg-black bg-text-gradient transform transition duration-300",
         { "rotate-45 translate-y-1.5": isOpen }
       )}
     ></span>
     <span
       className={clsx(
-        "block w-full h-0.5 bg-text-gradient transition duration-300",
+        "block w-full h-0.5 bg-black bg-text-gradient transition duration-300",
         { "opacity-0": isOpen }
       )}
     ></span>
     <span
       className={clsx(
-        "block w-full h-0.5 bg-text-gradient transform transition duration-300",
+        "block w-full h-0.5 bg-black bg-text-gradient transform transition duration-300",
         { "-rotate-45 -translate-y-1.5": isOpen }
       )}
     ></span>

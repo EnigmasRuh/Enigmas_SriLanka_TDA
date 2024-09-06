@@ -1,7 +1,16 @@
 import React from 'react';
 import iconSrc from '../../assets/Icon.png';
+import { useNavigate } from 'react-router-dom';
 
 const TripFacilityCard = () => {
+
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+        navigate(`/visaapplication`);  // Navigates to the TripDetails page with the trip ID
+  }
+
+
   return (
     <div
       className="relative flex flex-col justify-between w-[358px] h-[365px] p-6 mb-4 transition duration-200 ease-in-out border border-black shadow-lg cursor-pointer rounded-[28px] bg-white hover:bg-[#0B2838] group"
@@ -16,6 +25,7 @@ const TripFacilityCard = () => {
       </div>
       <button
   className="w-[186px] h-[52px] mt-8 text-white bg-[#D68631] font-[Prompt] font-regular rounded-[14px] shadow-md flex items-center justify-center"
+  onClick={handleNavigate}
 >
   Learn More
   <img src={iconSrc} alt="icon" className="w-6 h-6 ml-2" /> {/* Adjust the icon size as needed */}

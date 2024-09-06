@@ -18,8 +18,11 @@ import Frame100 from '../../assets/Frame 101.png';
 import iconSrc from '../../assets/Icon.png';
 import { useAuth } from '../../Contexts/Authprovider';
 import './landing.css';
+import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
+
+  
   const { user } = useAuth();
   const [currentImage, setCurrentImage] = useState(imagePlane);
   const [fadeClass, setFadeClass] = useState('');
@@ -135,7 +138,7 @@ const Landing = () => {
           />
 
           <button
-            className="absolute left-1/2 transform -translate-x-1/2 bottom-[80px] md:bottom-[100px] w-[140px] md:w-[186px] h-[48px] md:h-[52px] text-white bg-[#D68631] text-[14px] md:text-[16px] font-regular rounded-[14px] shadow-md flex items-center justify-center"
+            className="absolute left-1/2 transform -translate-x-1/2 bottom-[80px] md:bottom-[100px] w-[140px] md:w-[220px] h-[48px] md:h-[52px] text-white bg-[#D68631] text-[14px] md:text-[16px] font-regular rounded-[14px] shadow-md flex items-center justify-center"
           >
             Register as a Service
             <img src={iconSrc} alt="icon" className="w-4 h-4 ml-2 md:w-6 md:h-6" />
