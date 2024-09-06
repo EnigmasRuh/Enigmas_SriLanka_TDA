@@ -1,75 +1,71 @@
-const passport = require("passport");
-const User = require("../models/authModel");
+const nodemailer = require("nodemailer");
+const Mailgen = require("mailgen");
 
-const CLIENT_URL = "http://localhost:3000/";
-const ADMIN_URL = "http://localhost:3000/admin";
+const { EMAIL, PASSWORD } = require("../env.js");
 
-let isAdmin = false;
+const sendMail = (req, res) => {
+  const { userEmail, visaStatus } = req.body;
 
-const loginSuccess = (req, res) => {
-  if (req.user) {
-    const { _id, googleId, ...userWithoutIds } = req.user.toObject();
-    res.status(200).json({
-      success: true,
-      message: "successful",
-      user: userWithoutIds,
-    });
-  }
-};
-const loginFailed = (req, res) => {
-  res.status(401).json({
-    success: false,
-    message: "failure",
+  let config = {
+    service: "gmail",
+    auth: {
+      user: EMAIL,
+      pass: PASSWORD,
+    },
+  };
+
+  let transporter = nodemailer.createTransport(config);
+
+  let MailGenerator = new Mailgen({
+    theme: "default",
+    product: {
+      name: "Visa Application Service",
+      link: "https://visaapplication.com/",
+    },
   });
-  res.redirect(CLIENT_URL);
-};
 
-const logout = (req, res) => {
-  req.logout();
-  res.redirect(CLIENT_URL);
-};
+  let response = {
+    body: {
+      name: "Visa Application Service",
+      intro: visaStatus
+        ? "Your visa has been approved!"
+        : "Your visa application was not approved.",
+      table: {
+        data: [
+          {
+            item: "Visa Application",
+            description: visaStatus ? "Approved" : "Not Approved",
+            date: new Date().toLocaleDateString(),
+          },
+        ],
+      },
+      outro: visaStatus
+        ? "Congratulations on your visa approval!"
+        : "Please contact us for further assistance.",
+    },
+  };
 
-const googleAuth = passport.authenticate("google", {
-  scope: ["profile", "email"],
-});
+  let mail = MailGenerator.generate(response);
 
-const googleAdminAuth = (req, res, next) => {
-  isAdmin = true;
-  passport.authenticate("google", { scope: ["profile", "email"] })(
-    req,
-    res,
-    next
-  );
-};
+  let message = {
+    from: EMAIL,
+    to: userEmail,
+    subject: "Visa Application Status",
+    html: mail,
+  };
 
-const googleCallback = async (req, res) => {
-  try {
-    let user = await User.findOne({ googleId: req.user.googleId });
-
-    if (user && isAdmin) {
-      await User.updateOne(
-        { googleId: req.user.googleId },
-        { $set: { isUser: false } }
-      );
-    }
-    let user1 = await User.findOne({ googleId: req.user.googleId });
-
-    if (user1.isAdmin) {
-      return res.redirect(ADMIN_URL);
-    } else {
-      return res.redirect(CLIENT_URL);
-    }
-  } catch (err) {
-    console.error(err);
-    return res.redirect("/login/failed");
-  }
+  transporter
+    .sendMail(message)
+    .then(() => {
+      return res.status(201).json({
+        msg: "You should receive an email regarding your visa status.",
+      });
+    })
+    .catch((error) => {
+      return res.status(500).json({ error });
+    });
 };
 
 module.exports = {
-  loginSuccess,
-  loginFailed,
-  logout,
-  googleAuth,
-  googleAdminAuth,
-  googleCallback,
+  sendMail,
 };
