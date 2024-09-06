@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const FormPage2 = () => {
-
+   
    const navigate = useNavigate();
 
    const handleNavigate = () => {
