@@ -34,10 +34,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/auth", authRouter);
-app.use("/packages", packageRouter);
-app.use("/payment", paymentRouter);
-app.use("/email", emailRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/packages", packageRouter);
+app.use("/api/payment", paymentRouter);
+app.use("/api/email", emailRouter);
 
 // Connect to MongoDB
 mongoose
