@@ -1,7 +1,22 @@
 import LoginForm from '../../Components/Forms/LoginForm'
+import PopUpMessage from '../../Components/UI/PopUpMessage'
 import React from 'react'
+import { useState, useEffect } from 'react'
 
 const Login = () => {
+
+    const [showPopup, setShowPopup] = useState(true);
+
+  // Function to close the popup
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
+  useEffect(() => {
+    // Automatically show the popup when the component mounts
+    setShowPopup(true);
+  }, []);
+
   return (
     <div className="bg-cover bg-center bg-login-bg lg:mx-[10px] mt-24 lg:px-[60px] lg:py-0 rounded-[60px] flex lg:flex-row items-center justify-between flex-col-reverse">
         <div className=''>
@@ -18,6 +33,13 @@ const Login = () => {
                 Log in to your account to access your personalized travel dashboard.
             </div>
         </div>
+          {/* Show the popup message */}
+      {showPopup && (
+        <PopUpMessage
+          message="We are currently creating your profile page. No need to create an account—simply sign up!"
+          onClose={handleClosePopup}
+        />
+      )}
     </div>
   )
 }

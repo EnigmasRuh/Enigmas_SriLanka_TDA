@@ -1,36 +1,25 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import bcoverImage from '../../assets/logo.png'; // Use the the image destination path here
 
-const TourCard = () => {
-  const navigate = useNavigate();
-
-  const handleExploreMoreClick = () => {
-    navigate('/exploremore'); // Replace with your actual explore route
-  };
-
+const TripFacilityCard = () => {
   return (
     <div
-      className="relative flex flex-col justify-between p-4 mb-4 transition duration-200 ease-in-out border border-transparent shadow-lg cursor-pointer rounded-[45px] bg-white w-full max-w-[438px] mx-auto hover:bg-[#D68631] group"
+      className="relative flex flex-col justify-between w-[260px] h-auto p-6 mb-4 transition duration-200 ease-in-out border border-black shadow-lg cursor-pointer rounded-[20px] bg-white hover:bg-[#0B2838] group"
     >
-      <img
-        src={bcoverImage}
-        alt="Sri Lanka Explorer"
-        className="object-cover mb-4 rounded-[29.25px] w-full h-[279.75px] shadow-[0_4px_10px_rgba(255,255,255,0.3)]"
-      />
       <div className="text-left">
-        <p className="text-[14px] font-light text-[#0B2838] font-[Prompt]">
-          Explore 2000 years of history through UNESCO World Heritage sites. From sacred temples to majestic fortresses.
+        <h5 className="text-[24px] font-medium text-[#D68631] font-[Prompt] leading-tight">
+          Visa<br />Application
+        </h5>
+        <p className="mt-4 text-[14px] font-light text-[#0B2838] font-[Prompt] transition-colors duration-200 group-hover:text-white">
+          Get quick assistance and updates on your Electronic Travel Authorization (ETA) application for Sri Lanka.
         </p>
-        <button
-          onClick={handleExploreMoreClick}
-          className="w-[187px] h-[48px] text-white bg-[#D68631] text-[16px] font-medium rounded-[14px] mt-4 transition-colors duration-200 group-hover:bg-[#0B2838] group-hover:text-white shadow-[0_4px_10px_rgba(255,255,255,0.3)]"
-        >
-          Explore More
-        </button>
       </div>
+      <button
+        className="w-[140px] h-[38px] mt-8 text-white bg-[#D68631] text-[16px] font-[Prompt] font-regular rounded-[10px] shadow-md"
+      >
+        Learn More
+      </button>
     </div>
   );
 };
 
-export default TourCard;
+export default TripFacilityCard;

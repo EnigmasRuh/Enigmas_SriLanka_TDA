@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 require("./OAuth/passport");
 const authRouter = require("./OAuth/routers/authRouter");
 const packageRouter = require("./Packages/routers/packageRouter");
+const paymentRouter = require("./Payment/routers/paymentRouter");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,7 +22,7 @@ app.use(
 );
 app.use(express.json());
 
-app.use(
+app.use( 
   session({
     secret: process.env.SESSION_SECRET || "secretKey",
     resave: false,
@@ -29,23 +30,27 @@ app.use(
     cookie: { maxAge: 24 * 60 * 60 * 1000 },
   })
 );
-
+ 
 app.use(passport.initialize());
 app.use(passport.session());
-
+  
 app.use("/auth", authRouter);
 app.use("/packages", packageRouter);
+app.use("/payment", paymentRouter);
 
-// Connect to MongoDB
+
+// Connect to MongoDB 
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB", err));
 
-app.get("/", (req, res) => {
+app.get("/", (req, res) => { 
   res.send("Hello World!");
 });
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
-});
+}); 
+ 
+
