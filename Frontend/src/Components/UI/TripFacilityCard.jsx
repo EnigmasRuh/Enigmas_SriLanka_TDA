@@ -10,7 +10,6 @@ const TripFacilityCard = () => {
         navigate(`/visaapplication`);  // Navigates to the TripDetails page with the trip ID
   }
 
-
   return (
     <div
       className="relative flex flex-col justify-between w-[358px] h-[365px] p-6 mb-4 transition duration-200 ease-in-out border border-black shadow-lg cursor-pointer rounded-[28px] bg-white hover:bg-[#0B2838] group"

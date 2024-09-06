@@ -8,7 +8,6 @@ import MuiCheckbox from '@mui/material/Checkbox';
 import { useNavigate } from 'react-router-dom';
 
 
-
 const FormPage2 = () => {
    
    const navigate = useNavigate();
@@ -22,9 +21,6 @@ const FormPage2 = () => {
     const toggleCheckbox = () => {
         setChecked(!checked); // Toggle the checked state
     };
-
-
-
 
     function Checkbox({ icon, checkedIcon }) {
 
@@ -289,26 +285,10 @@ const FormPage2 = () => {
 
                         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
-
-
 
                 </div>
             </section>
-
-
 
 
             <section className="py-5 bg-white" >
