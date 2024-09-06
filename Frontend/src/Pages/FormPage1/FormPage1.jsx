@@ -1,514 +1,282 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { TextField, Box, Typography } from '@mui/material';
-import { RadioGroup, FormControlLabel, Radio, FormLabel, FormControl } from '@mui/material';
-import { Select, MenuItem, InputLabel } from '@mui/material';
-// import { DatePicker } from '@mui/x-date-pickers';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { Select, MenuItem, FormControl } from '@mui/material';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import MuiCheckbox from '@mui/material/Checkbox';
 import { useNavigate } from 'react-router-dom';
 
-const FormPage1 = () => {
-
+const CombinedFormPage = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-
-    console.log(values);
-
-    navigate('/visaapplication/form/next'); // Navigate to the desired route
-  };
-
-  const [values, setValues] = useState({
-    personalInfo: {
-      fullName: '',
-      dateOfBirth: '',
-      gender: '',
-      nationality: '',
-      passportNumber: '',
-      passportExpiryDate: '',
-    },
-    contactInfo: {
-      email: "",
-      phoneNumber: "",
-      homeAddress: "",
-    }
+  // Form state
+  const [formData, setFormData] = useState({
+    fullName: '',
+    passportNumber: '',
+    nationality: '',
+    dateOfBirth: '',
+    visaType: '',
+    durationOfStay: '',
+    arrivalDate: '',
+    purposeOfVisit: '',
+    accommodationDetails: '',
+    emergencyContact: '',
+    termsAgreed: false
   });
 
-  const handleInput = (event) => {
-    const { name, value } = event.target;
-
-    // Determine which object to update based on the field name
-    if (['fullName', 'dateOfBirth', 'gender', 'nationality', 'passportNumber', 'passportExpiryDate'].includes(name)) {
-      setValues((prevValues) => ({
-        ...prevValues,
-        personalInfo: {
-          ...prevValues.personalInfo,
-          [name]: value, // Update specific field in personalInfo
-        },
-      }));
-    } else if (['email', 'phoneNumber', 'homeAddress'].includes(name)) {
-      setValues((prevValues) => ({
-        ...prevValues,
-        contactInfo: {
-          ...prevValues.contactInfo,
-          [name]: value, // Update specific field in contactInfo
-        },
-      }));
-    }
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
   };
 
+  // Handle checkbox for Terms and Conditions
+  const handleCheckboxChange = () => {
+    setFormData((prevState) => ({
+      ...prevState,
+      termsAgreed: !prevState.termsAgreed
+    }));
+  };
 
+  // Submit form data
+  const handleSubmit = async () => {
+    if (!formData.termsAgreed) {
+      alert("Please agree to the terms and conditions.");
+      return;
+    }
 
+    // Assuming you have an API endpoint '/submitForm' to send data to the database
+    try {
+      const response = await fetch('/submitForm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        // Handle successful submission (navigate to the next page)
+        navigate(`/visaapplication/doc`);
+      } else {
+        // Handle error
+        console.error('Error submitting form data');
+      }
+    } catch (error) {
+      console.error('Error submitting form data:', error);
+    }
+  };
 
   return (
     <div>
-
-      <section className=" py-10 bg-white container mx-auto" style={{ marginTop: 100, maxWidth: "1127px" }}>
-        <div className="container mx-auto text-center">
-
-          <h3 className="font-semibold text-3xl  mb-2 font-[Prompt] text-[#D68631] " style={{ fontSize: 40 }}>VISA APPLICATION FORM</h3>
-          <p className=" font-[Prompt] text - [#000000] " style={{ fontSize: 24, marginTop: 25 }}>
-            Fill out the necessary information to apply for your visa. Provide accurate personal, contact, and travel details to ensure your application is processed smoothly.
-          </p>
-
-
-        </div></section>
-
-
-
-
-
-
-      <section className=" bg-white" >
-
-
-        <div className="font-[Prompt] container  mx-auto  border-2 border-black p-5 rounded-3xl" style={{ maxWidth: '843px', maxHeight: "470", boxShadow: '0 4px 8px rgba(214, 134, 49, 0.1)' }}>
-
-          <h2 className="  text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 24 }}>Personal Information Section:</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
-
-
-            <div className='lg:col-span-2'>
-
-              <p className='mt-3 mb-3'>Full Name (as per passport)</p>
-
+      {/* Form Section */}
+      <section style={{ marginTop: '100px' }} className="py-5 bg-white">
+        <div className="font-[Prompt] container mx-auto border-2 border-black p-5 rounded-3xl" style={{ maxWidth: '843px', maxHeight: '358', boxShadow: '0 4px 8px rgba(214, 134, 49, 0.1)' }}>
+          <h2 className="text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 24 }}>Personal Information Section:</h2>
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <p className="mb-3">Full Name</p>
               <TextField
-                name="fullName"
-                onChange={handleInput}
-                sx={{
-                  border: '1px solid black',
-                  borderRadius: '24px', // equivalent to rounded-3xl in Tailwind
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      border: 'none', // removes the border of the fieldset
-                    },
-                    '&:hover fieldset': {
-                      border: 'none', // removes the border on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                      border: 'none', // removes the border when focused
-                    }
-                  }
-                }}
                 fullWidth
-
-                placeholder="Browse from your device"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                placeholder="Enter your full name"
               />
-
             </div>
-
-            <div >
-
-              <p className='mb-1'>Date of Birth</p>
-
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DemoContainer components={['DatePicker']}>
-                  <DatePicker
-                    name="dateOfBirth"
-                    onChange={(newDate) => {
-                      console.log(newDate ? newDate.format('YYYY-MM-DD') : 'No date selected');
-                      setValues((prevValues) => ({
-                        ...prevValues,
-                        personalInfo: {
-                          ...prevValues.personalInfo,
-                          dateOfBirth: newDate ? newDate.format('YYYY-MM-DD') : '', // Format the date or set it to empty if no date
-                        },
-                      }));
-
-
-
-                    }}
-                    sx={{
-                      width: '100%', // Ensure the DatePicker takes up the full width
-                      '& .MuiOutlinedInput-root': {
-                        width: '100%', // Ensure the input field inside the DatePicker is full width
-                        border: '1px solid black', // Solid border
-                        borderRadius: '24px', // Rounded corners
-                        '& fieldset': {
-                          border: 'none', // Removes the default fieldset border
-                        },
-                        '&:hover fieldset': {
-                          border: 'none', // Removes the border on hover
-                        },
-                        '&.Mui-focused fieldset': {
-                          border: 'none', // Removes the border when focused
-                        }
-                      }
-                    }}
-                  />
-                </DemoContainer>
-              </LocalizationProvider>
-
-
-
-            </div>
-
-
-
 
             <div>
-
-              <p className='mb-3'>Gender</p>
-
-              <FormControl fullWidth >
-
-                <Select
-
-                  name='gender'
-
-
-                  onChange={handleInput}
-                  labelId="gender-label"
-                  id="gender-select"
-
-                  label="Gender"
-                  sx={{
-                    border: '1px solid black',
-                    borderRadius: '24px', // equivalent to rounded-3xl in Tailwind
-                    '& .MuiOutlinedInput-root': {
-                      '& fieldset': {
-                        border: 'none', // removes the border of the fieldset
-                      },
-                      '&:hover fieldset': {
-                        border: 'none', // removes the border on hover
-                      },
-                      '&.Mui-focused fieldset': {
-                        border: 'none', // removes the border when focused
-                      }
-                    },
-                    '& .MuiSelect-root': {
-                      '&:focus': {
-                        backgroundColor: 'transparent', // removes the blue background on focus
-                      }
-                    },
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      border: 'none', // removes the border of the outline
-                    },
-                    '&:hover .MuiOutlinedInput-notchedOutline': {
-                      border: 'none', // removes the border on hover
-                    },
-                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                      border: 'none', // removes the border when focused
-                    },
-                  }}
-                  fullWidth
-                >
-
-                  <MenuItem value="male">Male</MenuItem>
-                  <MenuItem value="female">Female</MenuItem>
-                </Select>
-
-              </FormControl>
-
-            </div>
-
-            <div >
-
-              <p className=' mb-3'>Nationality</p>
-
+              <p className="mb-3">Passport Number</p>
               <TextField
-                name='nationality'
-                onChange={handleInput}
-                sx={{
-                  border: '1px solid black',
-                  borderRadius: '24px', // equivalent to rounded-3xl in Tailwind
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      border: 'none', // removes the border of the fieldset
-                    },
-                    '&:hover fieldset': {
-                      border: 'none', // removes the border on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                      border: 'none', // removes the border when focused
-                    }
-                  }
-                }}
                 fullWidth
-
-                placeholder="Browse from your device"
-              />
-
-            </div>
-
-
-            <div >
-
-              <p className=' mb-3'>Passport Number</p>
-
-              <TextField
-
                 name="passportNumber"
-                onChange={handleInput}
-                sx={{
-                  border: '1px solid black',
-                  borderRadius: '24px', // equivalent to rounded-3xl in Tailwind
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      border: 'none', // removes the border of the fieldset
-                    },
-                    '&:hover fieldset': {
-                      border: 'none', // removes the border on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                      border: 'none', // removes the border when focused
-                    }
-                  }
-                }}
-                fullWidth
-
-                placeholder="Browse from your device"
+                value={formData.passportNumber}
+                onChange={handleChange}
+                placeholder="Enter your passport number"
               />
-
             </div>
 
+            <div>
+              <p className="mb-3">Nationality</p>
+              <TextField
+                fullWidth
+                name="nationality"
+                value={formData.nationality}
+                onChange={handleChange}
+                placeholder="Enter your nationality"
+              />
+            </div>
 
-            <div >
+            <div>
+              <p className="mb-3">Date of Birth</p>
+              <TextField
+                fullWidth
+                name="dateOfBirth"
+                value={formData.dateOfBirth}
+                onChange={handleChange}
+                placeholder="Select your birthdate"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <p className=' mb-3'>Passport Expiry Date</p>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DemoContainer components={['DatePicker']}>
-                  <DatePicker
-                    name="passportExpiryDate"
-                    onChange={(newDate) => {
-                      console.log(newDate ? newDate.format('YYYY-MM-DD') : 'No date selected');
-                      setValues((prevValues) => ({
-                        ...prevValues,
-                        personalInfo: {
-                          ...prevValues.personalInfo,
-                          passportExpiryDate: newDate ? newDate.format('YYYY-MM-DD') : '', // Format the date or set it to empty if no date
-                        },
-                      }));
+      {/* Travel Details Section */}
+      <section className="py-5 bg-white">
+        <div className="font-[Prompt] container mx-auto border-2 border-black p-5 rounded-3xl" style={{ maxWidth: '843px', maxHeight: '358', boxShadow: '0 4px 8px rgba(214, 134, 49, 0.1)' }}>
+          <h2 className="text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 24 }}>Travel Details Section:</h2>
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <p className="mb-3">Visa Type (Tourist, Business, Transit)</p>
+              <FormControl fullWidth>
+                <Select
+                  name="visaType"
+                  value={formData.visaType}
+                  onChange={handleChange}
+                >
+                  <MenuItem value="tourist">Tourist</MenuItem>
+                  <MenuItem value="business">Business</MenuItem>
+                  <MenuItem value="transit">Transit</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
 
+            <div>
+              <p className="mb-3">Duration of Stay</p>
+              <TextField
+                fullWidth
+                name="durationOfStay"
+                value={formData.durationOfStay}
+                onChange={handleChange}
+                placeholder="Enter the duration of your stay"
+              />
+            </div>
 
+            <div>
+              <p className="mb-3">Intended Date of Arrival</p>
+              <TextField
+                fullWidth
+                name="arrivalDate"
+                value={formData.arrivalDate}
+                onChange={handleChange}
+                placeholder="Enter the intended date of arrival"
+              />
+            </div>
 
-                    }}
-                    sx={{
-                      width: '100%', // Ensure the DatePicker takes up the full width
-                      '& .MuiOutlinedInput-root': {
-                        width: '100%', // Ensure the input field inside the DatePicker is full width
-                        border: '1px solid black', // Solid border
-                        borderRadius: '24px', // Rounded corners
-                        '& fieldset': {
-                          border: 'none', // Removes the default fieldset border
-                        },
-                        '&:hover fieldset': {
-                          border: 'none', // Removes the border on hover
-                        },
-                        '&.Mui-focused fieldset': {
-                          border: 'none', // Removes the border when focused
-                        }
-                      }
-                    }}
+            <div>
+              <p className="mb-3">Purpose of Visit</p>
+              <TextField
+                fullWidth
+                name="purposeOfVisit"
+                value={formData.purposeOfVisit}
+                onChange={handleChange}
+                placeholder="State the purpose of your visit"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Information Section */}
+      <section className="py-5 bg-white">
+        <div className="font-[Prompt] container mx-auto border-2 border-black p-5 rounded-3xl" style={{ maxWidth: '843px', maxHeight: '358', boxShadow: '0 4px 8px rgba(214, 134, 49, 0.1)' }}>
+          <h2 className="text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 24 }}>Additional Information Section:</h2>
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <p className="mb-3">Accommodation Details (Hotel Name, Address, or Host Details)</p>
+              <TextField
+                fullWidth
+                name="accommodationDetails"
+                value={formData.accommodationDetails}
+                onChange={handleChange}
+                placeholder="Provide your accommodation details"
+              />
+            </div>
+
+            <div>
+              <p className="mb-3">Emergency Contact Information</p>
+              <TextField
+                fullWidth
+                name="emergencyContact"
+                value={formData.emergencyContact}
+                onChange={handleChange}
+                placeholder="Provide emergency contact details"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Terms and Conditions Section */}
+      <section className="py-5 bg-white">
+        <div className="font-[Prompt] container mx-auto border-2 border-black p-5 rounded-3xl" style={{ maxWidth: '843px', maxHeight: '358', boxShadow: '0 4px 8px rgba(214, 134, 49, 0.1)' }}>
+          <h2 className="text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 24 }}>Terms and Conditions Agreement</h2>
+          <p>I have read and agree to the Terms and Conditions.</p>
+          <p>Read Terms and Conditions</p>
+          <div className="flex items-center" style={{ marginBottom: '20px', marginTop: '20px' }}>
+            <MuiCheckbox
+              checked={formData.termsAgreed}
+              onChange={handleCheckboxChange}
+              icon={<RadioButtonUncheckedIcon />}
+              checkedIcon={<CheckCircleIcon />}
+              sx={{
+                color: '#D68631',
+                '&.Mui-checked': {
+                  color: '#D68631',
+                },
+                '& .MuiSvgIcon-root': {
+                  fontSize: 32,
+                },
+              }}
+            />
+            <button
+              style={{ paddingInline: '55px' }}
+              className="ml-4 hover:bg-none bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-3xl flex items-center text-lg"
+            >
+              <span>Agree</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Submit Button */}
+      <section className="bg-white">
+        <div className="font-[Prompt] container mx-auto" style={{ maxWidth: '843px', maxHeight: '358' }}>
+          <div className="container mx-auto px-4" style={{ marginBottom: '40px' }}>
+            <div className="flex justify-end">
+              <button
+                style={{ paddingInline: '50px', paddingTop: '20px', paddingBottom: '20px' }}
+                className="hover:bg-none bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg"
+                onClick={handleSubmit}
+              >
+                <span>Submit</span>
+                <svg
+                  className="w-6 h-6 ml-4 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"
                   />
-                </DemoContainer>
-              </LocalizationProvider>
-
-
-
-            </div>
-
-
-
-
-
-          </div>
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-      </section>
-
-
-
-      <section className="py-10 bg-white" >
-        <div className="font-[Prompt] container  mx-auto  border-2 border-black p-5 rounded-3xl" style={{ maxWidth: '843px', maxHeight: "358", boxShadow: '0 4px 8px rgba(214, 134, 49, 0.1)' }}>
-
-          <h2 className="  text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 24 }}>Contact Information Section:</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
-
-
-
-
-
-
-
-
-
-
-            <div >
-
-              <p className=' mb-3'>Email Address</p>
-
-              <TextField
-
-                name="email"
-                onChange={handleInput}
-                sx={{
-                  border: '1px solid black',
-                  borderRadius: '24px', // equivalent to rounded-3xl in Tailwind
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      border: 'none', // removes the border of the fieldset
-                    },
-                    '&:hover fieldset': {
-                      border: 'none', // removes the border on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                      border: 'none', // removes the border when focused
-                    }
-                  }
-                }}
-                fullWidth
-
-                placeholder="Browse from your device"
-              />
-
-            </div>
-
-
-            <div >
-
-              <p className=' mb-3'>Home Address</p>
-
-              <TextField
-
-                name="homeAddress"
-                onChange={handleInput}
-
-                sx={{
-                  border: '1px solid black',
-                  borderRadius: '24px', // equivalent to rounded-3xl in Tailwind
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      border: 'none', // removes the border of the fieldset
-                    },
-                    '&:hover fieldset': {
-                      border: 'none', // removes the border on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                      border: 'none', // removes the border when focused
-                    }
-                  }
-                }}
-                fullWidth
-
-                placeholder="Browse from your device"
-              />
-
-            </div>
-
-
-            <div >
-
-              <p className=' mb-3'>Phone Number</p>
-
-              <TextField
-                name='phoneNumber'
-                onChange={handleInput}
-                sx={{
-                  border: '1px solid black',
-                  borderRadius: '24px', // equivalent to rounded-3xl in Tailwind
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      border: 'none', // removes the border of the fieldset
-                    },
-                    '&:hover fieldset': {
-                      border: 'none', // removes the border on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                      border: 'none', // removes the border when focused
-                    }
-                  }
-                }}
-                fullWidth
-
-                placeholder="Browse from your device"
-              />
-
-            </div>
-
-
-
-
-
-
-
-          </div>
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-      </section>
-
-
-      <section className=" bg-white" >
-        <div className="font-[Prompt] container  mx-auto " style={{ maxWidth: '843px', maxHeight: "358"}}>
-          <div className='container mx-auto px-4' style={{ marginBottom: "40px" }}>
-            <div className="flex justify-end" >
-              <button style={{ paddingInline: "50px", paddingTop: "20px", paddingBottom: "20px" }} className="hover:bg-none bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:bg-[#D68631] text-white px-6 py-3 rounded-xl flex items-center text-lg" onClick={handleClick}>
-                <span>Next Page</span>
-                <svg className="w-6 h-6 ml-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
                 </svg>
               </button>
             </div>
           </div>
         </div>
       </section>
-      <section />
-
-
-
-
     </div>
+  );
+};
 
-  )
-}
-
-export default FormPage1
+export default CombinedFormPage;
