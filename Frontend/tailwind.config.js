@@ -18,6 +18,8 @@ export default {
         'custom-orange': '#D68631',
         'custom-blue': '#0B2838',
         'lighter-blue': '#3D717E',
+        'darker-blue':'#0B2838',
+        'subtile':'#D68631',
       },
     },
   },
