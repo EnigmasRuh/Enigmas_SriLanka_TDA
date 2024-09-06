@@ -1,13 +1,10 @@
-# Backend
-
-## Overview
-
-Overview of the Backend
+## Frontend
 
 ## Technologies Used
 
 - **React**
 - **TailwindCSS**
+- **MaterialUI**
 
 ## Setup Instructions
 
