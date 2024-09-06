@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Explore", href: "/explore" },
-  { label: "Plan Your Trip", href: "/pytrip" },
   { label: "Visa Application", href: "/visaapplication" },
   { label: "About Sri Lanka", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -116,7 +115,7 @@ function Navbar() {
               {/* Login Button */}
               <div className="ml-4">
                 <a
-                  href="#login"
+                  href="/login"
                   className="px-4 py-2 bg-[#0B2838] text-white rounded-[14px] shadow-sm hover:shadow-md transition duration-300"
                 >
 

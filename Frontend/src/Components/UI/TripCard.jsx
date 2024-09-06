@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 const ProductCard = ({trip}) => {
   const navigate = useNavigate();
 
-  const handleNavigate = (id) => {
-    navigate(`/explore:${id}`);  // Navigates to the TripDetails page with the trip ID
+  const handleNavigate = () => {
+    navigate(`/explore/tripdetails`);  // Navigates to the TripDetails page with the trip ID
   };
 
 

@@ -7,7 +7,6 @@ import ServiceSignUp from "../Pages/ServiceSignUp/ServiceSignUp";
 import TravellerSignUp from "../Pages/TravellerSignUp/TravellerSignUp";
 import NoUrl from "../Pages/404/NoUrl";
 import Explore from "../Pages/Explore/Explore";
-import PyTrip from "../Pages/PYTrip/PYTrip";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import TravelerOnboarding from "../Pages/TravelerOnboarding/TravelerOnboarding";
@@ -40,16 +39,12 @@ const router1 = createBrowserRouter([{
   {
     path: "/explore",
     element: <Explore/>,
-
   },
   {
-    path: '/explore:id',
+    path: '/explore/tripdetails',
     element: <TripDetails />
   },
-  {
-    path: "/pytrip",
-    element: <PyTrip />,
-  }, {
+{
     path: "/visaapplication",
     element: <VisaApplication />,
   }, {

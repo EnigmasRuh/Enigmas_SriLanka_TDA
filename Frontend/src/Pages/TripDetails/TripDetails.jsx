@@ -7,8 +7,15 @@ import TripCard from "../../Components/UI/TripCard";
 import tea from "../../assets/tea.png";
 import galle from "../../assets/galle.png";
 import sigiriya from "../../assets/sigiriya.png";
+import { useNavigate } from "react-router-dom";
 
 const TripDetails = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate(`/`);  // Navigates to the TripDetails page with the trip ID
+  }
+
   const mockTrips = [
     {
       id: 1,
@@ -35,6 +42,8 @@ const TripDetails = () => {
       image: sigiriya,
     },
   ];
+
+
   return (
     <div className="w-full h-auto">
       <main className="pt-0">
@@ -49,7 +58,7 @@ const TripDetails = () => {
             <div className="text-white text-[24px] md:text-[48.06px] font-bold font-Prompt">
               Cultural Sri Lanka 14 Days - Premium
             </div>
-            <button className=" bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:from-[#3d210a] hover:via-[#a9601b] hover:to-[#3d210a] text-white py-2 px-4 mt-4 md:mt-0 rounded-xl flex items-center justify-center text-sm md:text-[20px] transition-colors duration-300 w-[200px] md:w-[270px] h-[48px] md:h-[62px] cursor-pointer">
+            <button  className=" bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:from-[#3d210a] hover:via-[#a9601b] hover:to-[#3d210a] text-white py-2 px-4 mt-4 md:mt-0 rounded-xl flex items-center justify-center text-sm md:text-[20px] transition-colors duration-300 w-[200px] md:w-[270px] h-[48px] md:h-[62px] cursor-pointer" onClick={handleNavigate}>
               <span>Book This Trip</span>
               <img
                 src={Vector}
@@ -119,7 +128,7 @@ const TripDetails = () => {
 
                 // more highlights...
               ].map((highlight, index) => (
-                <button
+                <button 
                   key={index}
                   className="w-full md:w-[368px] h-[48px] bg-lighter-blue text-white py-2 px-4 text-xs md:text-sm shadow-md transition duration-300 rounded-xl"
                 >
@@ -142,7 +151,7 @@ const TripDetails = () => {
                   className="w-5 h-5"
                 />
               </button>
-              <button className="bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:from-[#3d210a] hover:via-[#a9601b] hover:to-[#3d210a] text-white py-2 px-4 rounded-xl flex items-center justify-center text-sm md:text-[20px] transition-colors duration-300 w-[200px] md:w-[270px] h-[48px] md:h-[62px] cursor-pointer">
+              <button className="bg-gradient-to-r from-[#5A3111] via-[#D68631] to-[#5A3111] hover:from-[#3d210a] hover:via-[#a9601b] hover:to-[#3d210a] text-white py-2 px-4 rounded-xl flex items-center justify-center text-sm md:text-[20px] transition-colors duration-300 w-[200px] md:w-[270px] h-[48px] md:h-[62px] cursor-pointer" onClick={handleNavigate}>
                 <span>Book This Trip</span>
                 <img
                   src={Vector}
