@@ -87,7 +87,7 @@ const router1 = createBrowserRouter([{
     path: "/visaapplication/doc",
     element: <DocumentFeez/>
 
-  ]
+}]
 },
 {   //all
   path: '*',
