@@ -1,7 +1,8 @@
 const nodemailer = require("nodemailer");
 const Mailgen = require("mailgen");
+require("dotenv").config();
 
-const { EMAIL, PASSWORD } = require("../env.js");
+const { EMAIL, PASSWORD } = process.env;
 
 const sendMail = (req, res) => {
   const { userEmail, visaStatus } = req.body;
@@ -19,8 +20,8 @@ const sendMail = (req, res) => {
   let MailGenerator = new Mailgen({
     theme: "default",
     product: {
-      name: "Visa Application Service",
-      link: "https://visaapplication.com/",
+      name: "Dummy Product Name",
+      link: "https://dummyproductlink.com/",
     },
   });
 
@@ -62,7 +63,10 @@ const sendMail = (req, res) => {
       });
     })
     .catch((error) => {
-      return res.status(500).json({ error });
+      console.error("Error sending email:", error);
+      return res
+        .status(500)
+        .json({ error: "Failed to send email. Please try again later." });
     });
 };
 

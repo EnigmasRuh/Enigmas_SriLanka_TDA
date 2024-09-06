@@ -1,7 +1,7 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const createCheckoutSession = async (req, res) => {
-  const { unit_amount } = req.body; // Extract unit_amount from the request body
+  const { unit_amount } = req.body;
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -12,7 +12,7 @@ const createCheckoutSession = async (req, res) => {
             product_data: {
               name: "visa payment",
             },
-            unit_amount: unit_amount, // Use the extracted unit_amount
+            unit_amount: unit_amount,
           },
           quantity: 1,
         },
