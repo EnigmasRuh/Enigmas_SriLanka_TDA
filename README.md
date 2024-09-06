@@ -71,7 +71,7 @@ A key feature of this solution is the streamlined visa processing system, which 
 
 #### ER diagram
 
-![ER diagram](images/er-diagram.png)
+![ER diagram](images/er-diagram.drawio.png)
 
 #### Sequence diagram
 

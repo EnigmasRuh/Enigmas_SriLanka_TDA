@@ -12,7 +12,7 @@ const ProductCard = ({trip}) => {
 
   return (
     <div
-      className="relative flex flex-col justify-between p-4 mb-4 transition duration-200 ease-in-out border border-transparent shadow-lg cursor-pointer rounded-[45px] bg-white w-full max-w-[438px] mx-auto hover:bg-[#D68631] group"
+      className="relative flex flex-col justify-between p-4 mb-4 transition duration-200 ease-in-out border border-[#10465E] shadow-lg cursor-pointer rounded-[45px] bg-white w-full max-w-[438px] mx-auto hover:bg-[#D68631] group"
     >
       <img   
         src={trip.image} 

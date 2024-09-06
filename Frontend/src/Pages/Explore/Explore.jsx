@@ -64,9 +64,9 @@ function ExplorePage() {
   return (
     <div className="pt-36 p-4">
       <div className="text-center pb-11">
-        <h1 className="text-5xl mb-2 text-[#10465E]">Discover Our Unforgettable Tours</h1>
-        <h2 className="text-base">Embark on extraordinary journeys with our carefully curated selection of tours. </h2>
-        <h2 className="text-base">From thrilling adventures to relaxing retreats, we have something for every traveler.</h2>  
+        <h1 className="text-7xl mb-2 font-medium text-[#10465E]">Discover Our Unforgettable Tours</h1>
+        <h2 className="text-lg font-Prompt">Embark on extraordinary journeys with our carefully curated selection of tours. </h2>
+        <h2 className="text-lg font-Prompt">From thrilling adventures to relaxing retreats, we have something for every traveler.</h2>  
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {mockTrips.map(trip => (
