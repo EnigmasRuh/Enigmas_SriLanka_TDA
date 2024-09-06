@@ -75,7 +75,7 @@ A key feature of this solution is the streamlined visa processing system, which 
 
 #### Sequence diagram
 
-![Sequence diagram](images/sequence-diagram.png)
+![Sequence diagram](images/sequence-diagram.drawio.png)
 
 ### Built With
 
