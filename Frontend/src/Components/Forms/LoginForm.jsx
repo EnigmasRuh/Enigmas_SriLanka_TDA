@@ -8,7 +8,7 @@ const LoginForm = ({ defaultUsername, defaultPassword} ) => {
 const navigate = useNavigate();
 
 const hadleNavigate = () => {
-    navigate('/') 
+    navigate('/travelerOnboarding') 
 }
 const [username, setUsername] = useState(defaultUsername || '');
   const [password, setPassword] = useState(defaultPassword || '');

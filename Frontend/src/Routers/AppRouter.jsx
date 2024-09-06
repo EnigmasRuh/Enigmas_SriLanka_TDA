@@ -25,7 +25,6 @@ const router1 = createBrowserRouter([{
   children: [{
     index: true,
     element: <Landing />
-
   },
   // {
   //     element: <UserProtected/>,
