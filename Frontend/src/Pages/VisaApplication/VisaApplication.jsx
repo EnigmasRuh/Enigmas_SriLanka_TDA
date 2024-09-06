@@ -37,7 +37,7 @@ const VisaApplication = () => {
   
 
   return (
-    <div className="w-full h-screen p-8 bg-white flex flex-col items-center justify-between" style={{ paddingTop: "120px", marginBottom: "250px" }}>
+    <div className="w-full h-screen p-8 bg-white flex flex-col items-center justify-between" style={{ paddingTop: "120px", marginBottom: "330px" }}>
       {/* Dynamic Progress Bar */}
       <div className="w-full max-w-4xl flex justify-between items-center mb-12">
         {steps.map((step, index) => (
