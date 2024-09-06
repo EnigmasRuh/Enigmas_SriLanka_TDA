@@ -6,7 +6,6 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -15,22 +14,21 @@
     <img src="images/logo.png" alt="Logo" width="240" height="80">
   </a>
 
-<h3 align="center">Add your title here</h3>
+<h3 align="center">Sri Lanka Tourism Development Authority Website</h3>
 
   <p align="center">
-    Add your description here
+    An innovative solution to elevate Sri Lanka's tourism industry by offering a comprehensive platform for travel services and streamlined visa processing, designed for the Sri Lankan authorities to support and enhance the tourist experience.
     <br />
-    <a href="https://github.com/ckekula/wedding-directory"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/EnigmasRuh/Enigmas_SriLanka_TDA"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ckekula/wedding-directory">View Test</a>
+    <a href="https://github.com/EnigmasRuh/Enigmas_SriLanka_TDA">View Test</a>
     ·
-    <a href="https://github.com/ckekula/wedding-directory/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/EnigmasRuh/Enigmas_SriLanka_TDA/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/ckekula/wedding-directory/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/EnigmasRuh/Enigmas_SriLanka_TDA/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -52,33 +50,41 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
-Explain in detail about the project
+The Sri Lanka Tourist Development Authority website is a government-level solution aimed at revolutionizing Sri Lanka's tourism industry. As a country rich in cultural heritage, natural beauty, and historical significance, Sri Lanka has the potential to become a global tourism hub. This project is designed to harness modern technology and artificial intelligence to propel the nation's tourism sector to new heights.
+
+The website offers a platform for local travel services to register and create diverse packages that cater to various tourist interests. Foreign travelers can easily access, view, and select from these packages, ensuring a seamless and personalized experience.
+
+A key feature of this solution is the streamlined visa processing system, which simplifies and digitizes the entire process. From visa form submission to risk assessment using publicly available Interpol Notices APIs, the system is designed to enhance efficiency, security, and transparency. Visa officers can easily manage applications, approve or deny them based on comprehensive data, and notify users of their visa status via email. Additionally, the system provides valuable insights to government authorities through visualized historical data and analytics, enabling informed decision-making and continuous improvement in the visa processing workflow.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
 
-- Feature 1
-- Feature 2
+- **Travel Service Registration:** Platform for travel services to register and create customizable packages.
+- **User-Friendly Package Selection:** Foreign users can browse and select from a variety of travel packages.
+- Streamlined Visa Processing:
+- - **Visa Form Submission:** Input fields for personal information, passport bio page upload, passport-sized photograph upload, and travel history of the last 12 months.
+- - **Visa Officer Interface:** Interface for visa officers to review and manage applications.
+- - **Risk Assessment:** Integration with publicly available Interpol Notices APIs to identify risky applicants.
+- - **Email Notifications:** Automatic notifications sent to users regarding their visa application status.
+- - **Analytics and Visualization:** Historical data analysis and visualization to provide insights for government authorities.
 
 #### ER diagram
 
 ![ER diagram](images/er-diagram.png)
 
-
 #### Sequence diagram
 
-![Sequence diagram](images/sequence-diagram.png)
-
+![Sequence diagram](images/sequence-diagram.drawio.png)
 
 ### Built With
 
 Add others according to your tech stack:
 
-- [![React][React.js]]
-- [![TailwindCSS][TailwindCSS]]
-- [![JWT][JWT]]
-- [![MongoDB][MongoDB]]
+- ![React][React.js]
+- ![TailwindCSS][TailwindCSS]
+- ![JWT][JWT]
+- ![MongoDB][MongoDB]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,17 +143,14 @@ Your acknowledgements
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/ckekula/wedding-directory.svg?style=for-the-badge
-[contributors-url]: https://github.com/ckekula/wedding-directory/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ckekula/wedding-directory.svg?style=for-the-badge
-[forks-url]: https://github.com/ckekula/wedding-directory/network/members
-[stars-shield]: https://img.shields.io/github/stars/ckekula/wedding-directory.svg?style=for-the-badge
-[stars-url]: https://github.com/ckekula/wedding-directory/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ckekula/wedding-directory.svg?style=for-the-badge
-[issues-url]: https://github.com/ckekula/wedding-directory/issues
-[license-shield]: https://img.shields.io/github/license/ckekula/wedding-directory.svg?style=for-the-badge
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[contributors-shield]: https://img.shields.io/github/contributors/EnigmasRuh/Enigmas_SriLanka_TDA.svg?style=for-the-badge
+[contributors-url]: https://github.com/EnigmasRuh/Enigmas_SriLanka_TDA/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/EnigmasRuh/Enigmas_SriLanka_TDA.svg?style=for-the-badge
+[forks-url]: https://github.com/EnigmasRuh/Enigmas_SriLanka_TDA/network/members
+[stars-shield]: https://img.shields.io/github/stars/EnigmasRuh/Enigmas_SriLanka_TDA.svg?style=for-the-badge
+[stars-url]: https://github.com/EnigmasRuh/Enigmas_SriLanka_TDA/stargazers
+[issues-shield]: https://img.shields.io/github/issues/EnigmasRuh/Enigmas_SriLanka_TDA.svg?style=for-the-badge
+[issues-url]: https://github.com/EnigmasRuh/Enigmas_SriLanka_TDA/issues
 [product-screenshot]: images/screenshot.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [TailwindCSS]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white

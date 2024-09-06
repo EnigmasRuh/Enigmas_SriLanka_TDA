@@ -1,12 +1,10 @@
 # Backend
 
-## Overview
-
-Overview of the Backend
-
 ## Technologies Used
 
 - **Express**
+- **Passport**
+- **Mongoose**
 
 ## Setup Instructions
 
