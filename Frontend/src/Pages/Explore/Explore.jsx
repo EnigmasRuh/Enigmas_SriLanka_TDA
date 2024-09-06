@@ -1,5 +1,11 @@
 import TripCard from '../../Components/UI/TripCard'
 import bcoverImage from '../../assets/logo.png';
+import elephant from '../../assets/elephant.png';
+import wheelr from '../../assets/3wheelr.png';
+import perhara from '../../assets/kandyperahara.png';
+import pettigala from '../../assets/pettigala.png';
+import trainwithgirl from '../../assets/trainwithgirl.png';
+import galle from '../../assets/galle.png';
 
 function ExplorePage() {
 
@@ -10,7 +16,7 @@ function ExplorePage() {
       duration: "14 Days",
       type: "Premium",
       groupSize: "4 - 16 People",
-      image: bcoverImage
+      image: elephant
     },
     {
       id: 2,
@@ -18,7 +24,7 @@ function ExplorePage() {
       duration: "10 Days",
       type: "Standard",
       groupSize: "5 - 20 People",
-      image: bcoverImage
+      image: perhara
     },
     {
       id: 3,
@@ -26,7 +32,7 @@ function ExplorePage() {
       duration: "7 Days",
       type: "Luxury",
       groupSize: "2 - 10 People",
-      image: bcoverImage
+      image: galle
     },
     {
       id: 4,
@@ -34,7 +40,7 @@ function ExplorePage() {
       duration: "12 Days",
       type: "Premium",
       groupSize: "6 - 15 People",
-      image: bcoverImage
+      image: pettigala
     },
     {
       id: 5,
@@ -42,7 +48,7 @@ function ExplorePage() {
       duration: "8 Days",
       type: "Standard",
       groupSize: "4 - 12 People",
-      image: bcoverImage
+      image: trainwithgirl
     },
     {
       id: 6,
@@ -50,7 +56,7 @@ function ExplorePage() {
       duration: "5 Days",
       type: "Premium",
       groupSize: "3 - 8 People",
-      image: bcoverImage
+      image: wheelr
     }
   ];
 
