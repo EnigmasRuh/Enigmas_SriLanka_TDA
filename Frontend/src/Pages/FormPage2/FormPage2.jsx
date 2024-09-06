@@ -11,12 +11,11 @@ import { useNavigate } from 'react-router-dom';
 
 const FormPage2 = () => {
    
-      const navigate = useNavigate();
+   const navigate = useNavigate();
 
-      const handleNavigate = () => {
-        navigate('/visaapplication/doc');
-      }
-
+   const handleNavigate = () => {
+         navigate(`/visaapplication/doc`);  // Navigates to the TripDetails page with the trip ID
+   }
 
 
     const [checked, setChecked] = useState(false);
