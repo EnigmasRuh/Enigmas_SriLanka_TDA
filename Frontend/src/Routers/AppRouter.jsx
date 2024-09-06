@@ -15,6 +15,7 @@ import TripDetails from "../Pages/TripDetails/Tripdetails";
 import ProtectedRoute from "../Routers/ProtectedRoute";
 import VisaApplication from "../Pages/VisaApplication/VisaApplication";
 import VisaInfo from "../Pages/VisaInfo/VisaInfo";
+import FormPage1 from "../Pages/FormPage/FormPage1/FormPage1";
 
 
 const router1 = createBrowserRouter([{
@@ -74,6 +75,9 @@ const router1 = createBrowserRouter([{
 },{
   path: "/visaapplication/details",
   element: <VisaInfo/>
+},{
+  path: "visaapplication/form",
+  elemnt: <FormPage1/>
 }
 ]
 },

@@ -6,7 +6,7 @@ const TravelerOnboarding = () => {
         <div>
 
             <section className="py-10 bg-white" style={{ marginTop: 60 }}>
-                <div className="container mx-auto text-center">
+            <div className="container mx-auto text-center">
                     <h3 className="text-3xl  mb-2 font-[Prompt] text-[#0B2838] " style={{ fontSize: 70 }}>How can we help you?</h3>
                     <p className="text-gray-500 mb-8 font-[Prompt] " style={{ fontSize: 20, marginTop: 25 }}>
                         Seamlessly organize your Sri Lankan adventure with our comprehensive planning tools.
@@ -15,8 +15,9 @@ const TravelerOnboarding = () => {
                     
                         {/* Visa Application */}
 
+                       
                         <div className=" font-[Prompt]  transition-colors duration-500 hover:text-white border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg hover:bg-[#0B2838] ">
-                            <h2 className=" font-prompt text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 40 }}>
+                            <h2 className="  text-left text-xl font-semibold text-[#D68631] mb-4" style={{ fontSize: 40 }}>
                                 <div className='mt-6'>Visa</div>
 
                                 <div className='mt-6 mb-6'>Application</div>
@@ -34,10 +35,8 @@ const TravelerOnboarding = () => {
 
 
                         {/* Accommodation Finder */}
-
                         <div className=" font-[Prompt]  transition-colors duration-500 hover:bg-[#0B2838]  hover:text-white border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg ">
-                            <h2 className=" text-[#D68631] text-left text-xl font-semibold  mb-4" style={{ fontSize: 40 }}>
-
+                        <h2 className=" text-[#D68631] text-left text-xl font-semibold  mb-4" style={{ fontSize: 40 }}>
                                 <div className='mt-6'>Accommodation</div>
 
                                 <div className='mt-6 mb-6'>Finder</div>
@@ -56,7 +55,7 @@ const TravelerOnboarding = () => {
 
                         {/* Transportation Guide */}
                         <div className="  font-[Prompt]  transition-colors duration-500 hover:bg-[#0B2838]  hover:text-white border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg ">
-                            <h2 className=" text-[#D68631] text-left text-xl font-semibold  mb-4" style={{ fontSize: 40 }}>
+                        <h2 className=" text-[#D68631] text-left text-xl font-semibold  mb-4" style={{ fontSize: 40 }}>
 
                                 <div className='mt-6'>Transportation</div>
 
@@ -76,7 +75,7 @@ const TravelerOnboarding = () => {
 
                         {/* Travel Packages */}
                         <div className=" font-[Prompt]  hover:bg-[#0B2838] transition-colors duration-500  hover:text-white border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg ">
-                            <h2 className=" text-[#D68631] text-left text-xl font-semibold  mb-4" style={{ fontSize: 40 }}>
+                        <h2 className=" text-[#D68631] text-left text-xl font-semibold  mb-4" style={{ fontSize: 40 }}>
 
 
 
@@ -87,7 +86,7 @@ const TravelerOnboarding = () => {
 
 
                             </h2>
-                            <p className=" font-[Prompt]  text-left text-xl   mb-4" style={{ fontSize: 20, lineHeight: 1.5 }}>
+                            <p className=" font-[Prompt] text-left text-xl mb-4" style={{ fontSize: 20, lineHeight: 1.5 }}>
                                 Explore curated travel packages that offer convenient transport and experiences across Sri Lanka.
                             </p>
 
@@ -102,7 +101,7 @@ const TravelerOnboarding = () => {
 
                         {/* Just Explore */}
                         <div className=" font-[Prompt] col-span-1 md:col-span-2 lg:col-span-2 bg-[#0B2838] border-2 border-black p-6 rounded-3xl shadow hover:shadow-lg ">
-                            <h2 className="text-[#D68631] text-left text-xl font-semibold  mb-4" style={{ fontSize: 40 }}>
+                        <h2 className="text-[#D68631] text-left text-xl font-semibold  mb-4" style={{ fontSize: 40 }}>
 
 
                                 <div className='mt-6'>Just</div>
